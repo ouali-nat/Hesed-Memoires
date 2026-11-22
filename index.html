@@ -21,7 +21,6 @@
   <link rel="preconnect" href="https://oegxxndiuovisustjstp.supabase.co" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="style.css?v=20261106-theme-containment-v1">
-  <link rel="stylesheet" href="css/hesed-archives-topblock.css?v=20261107-single-header-v2">
   <link rel="stylesheet" href="css/hesed-memory-floating.css?v=20261103-compact-panels-v3" data-hesed-floating>
   <link rel="stylesheet" href="memory-access.css?v=20261025-original-logo">
   <!-- L'accueil n'a pas besoin de memoire.css?v=20261026-sitewide-math-v1 pour s'afficher : chargement non bloquant, prêt pour les pages suivantes. -->
@@ -34,13 +33,12 @@
   <link rel="icon" type="image/svg+xml" href="/assets/aurore-logo.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="css/hesed-organic-header-20261104-final2.css?v=20261122-header-layout-v2">
-  <link rel="stylesheet" href="css/hesed-material-home-20261104.css?v=20261104-material-flat-v1">
   <link rel="stylesheet" href="css/hesed-memory-hero-motion.css?v=20261107-motion-restore-v2">
   <link rel="stylesheet" href="css/hesed-memory-home-refine.css?v=20261107-memory-home-refine-v1">
   <link rel="stylesheet" href="css/hesed-home-thick-blocks.css?v=20261122-thick-blocks-v1">
   <link rel="stylesheet" href="css/hesed-home-hero-center.css?v=20261122-hero-center-v1">
   <link rel="stylesheet" href="css/aurore-hero-styles.css">
-  <link rel="stylesheet" href="css/hesed-archives-parity.css?v=20261122-home-parity-v2">
+  <link rel="stylesheet" href="css/hesed-archives-parity.css?v=20261122-theme-tokens-v3">
 </head>
 <body data-page="home">
   <div class="ambient-bg" aria-hidden="true"></div>
@@ -95,7 +93,7 @@
       </div></div>
   <main class="wrap main-content">
   <div class="hesed-hero-controls"><button type="button" class="hesed-hero-toggle hesed-hero-menu-trigger" id="hesedHeroMenuTrigger" aria-haspopup="menu" aria-expanded="false" aria-label="Options de l’accueil"><svg class="hesed-options-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h7M15 7h5M4 17h3M11 17h9"/><circle cx="13" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button></div>
-  <section class="hero" id="hesedMemoryHero" aria-labelledby="hesedMemoryHeroTitle">
+  <section class="hero hesed-memory-hero" id="hesedMemoryHero" aria-labelledby="hesedMemoryHeroTitle">
 <div class="hero-motif"></div>
 <div class="hero-glow g1"></div>
 <div class="hero-glow g2"></div>
@@ -104,12 +102,12 @@
 <p class="eyebrow">Hesed Mémoire</p>
 <h1 id="hesedMemoryHeroTitle">Retenir, <span class="accentword">tout simplement.</span></h1>
 <p class="sub">Vos contenus, prêts à être révisés.</p>
+<p class="hesed-memory-search-status" id="hesedMemorySearchStatus" aria-live="polite"></p>
 <form class="auraster-home-search" id="hesedMemorySearch" role="search">
 <span id="hesedMemorySearchIcon" class="home-search-icon" aria-hidden="true"></span>
 <input autocomplete="off" id="hesedMemorySearchInput" placeholder="Rechercher une mémorisation, une carte ou un cours…" type="search"/>
 <button class="home-search-submit" id="hesedMemorySearchSubmit" type="submit">Rechercher</button>
 </form>
-<p class="hesed-memory-search-status" id="hesedMemorySearchStatus" aria-live="polite"></p>
 </div>
 </section>
   <section class="home-section" aria-labelledby="home-tools-title">
@@ -159,5 +157,5 @@
   <script src="spa-router.js?v=20261023-login-gate-route-fix"></script>
   <script src="app-menu.js?v=20261103-archives-sidebar-v1"></script>
 <script src="compact-actions.js?v=20261107-clean-options-v1"></script><script src="hesed-home-polish.js?v=20261107-ui-cleanup-v1"></script><script src="js/hesed-hero-controls.js?v=20261107-ui-cleanup-v1"></script><script src="hesed-hero-morph.js?v=20261107-motion-restore-v2"></script>
-  <script src="hesed-global-header.js?v=20261122-header-layout-v2"></script></body>
+  <script src="hesed-global-header.js?v=20261122-final-home-layout-v3"></script></body>
 </html>
