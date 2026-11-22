@@ -1,5 +1,6 @@
-/* Hesed Mémoire — accueil "Or & Nuit".
-   Fond nuit, filets dorés fins, halos dorés, pastilles en majuscules, coins alternés, lignes à carré d'icône.
+/* Hesed Mémoire — accueil "Or & Nuit", aligné sur Hesed Archives.
+   Fond nuit, filets dorés fins, halos dorés, pastilles en majuscules, coins alternés, lignes à carré d'icône,
+   héros animé (formes qui se transforment, motif alvéoles, lueurs), recherche du héros visible.
    L'or est la teinte par défaut (thème violet) ; les autres couleurs du site recolorent l'accueil avec leur accent.
    Chargé en dernier : surcharge les feuilles précédentes. */
 
@@ -34,7 +35,6 @@ html body[data-page="home"] .ambient-bg{
 /* Pastilles (même langage partout) */
 html body[data-page="home"] .home-card .card-stat,
 html body[data-page="home"] .section-kicker,
-html body[data-page="home"] #hesedMemoryHero .eyebrow,
 html body[data-page="home"] .home-action-card .coming-label,
 html body[data-page="home"] .home-card[href="assistant.html"]::before{
   display:inline-flex!important;
@@ -56,52 +56,174 @@ html body[data-page="home"] .home-card[href="assistant.html"]::before{
 }
 html body[data-page="home"] .home-card .card-stat b{color:inherit!important;font-weight:inherit!important}
 
-/* Bloc du haut (marque, connexion, recherche) */
+/* ===== Bloc du haut (comme Archives) ===== */
 html body[data-page="home"] #hesedArchivesTopblock::before{
   background:linear-gradient(160deg,var(--hn-panel1),var(--hn-panel2))!important;
   border:1.5px solid var(--hn-line)!important;
   box-shadow:0 12px 30px var(--hn-glow),inset 0 0 34px color-mix(in srgb,var(--hn-gold) 6%,transparent)!important;
 }
-html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-auth,
+/* Bouton principal : or plein avec icône, comme "Déposer un document" */
 html body[data-page="home"] #hesedArchivesTopblock .hesed-add-content-btn{
-  background:var(--hn-fill)!important;
-  border:1.5px solid var(--hn-line)!important;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--hn-gold) 92%,#fff),color-mix(in srgb,var(--hn-gold) 78%,#000))!important;
+  border:1px solid color-mix(in srgb,var(--hn-gold) 70%,#fff)!important;
+  border-radius:22px!important;
+  color:#fff8e1!important;
+  text-shadow:0 1px 1px rgba(0,0,0,.35)!important;
+  box-shadow:0 8px 22px var(--hn-glow)!important;
+  gap:10px!important;
+}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-add-content-btn svg{
+  display:block!important;width:20px!important;height:20px!important;
+  fill:none!important;stroke:currentColor!important;stroke-width:2.2!important;stroke-linecap:round!important;
+}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-add-content-btn *{color:inherit!important}
+/* Connexion : pastille sombre à contour, icône dorée */
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-auth{
+  background:color-mix(in srgb,var(--hn-panel2) 80%,transparent)!important;
+  border:1.5px solid var(--hn-line-soft)!important;
+  border-radius:26px!important;
+  color:var(--hn-text)!important;
+  box-shadow:0 6px 18px color-mix(in srgb,var(--hn-gold) 10%,transparent)!important;
+}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-auth-mark{
+  display:grid!important;place-items:center!important;
+  background:var(--hn-fill)!important;border:1.5px solid var(--hn-line)!important;border-radius:50%!important;
   color:var(--hn-gold-text)!important;
 }
-html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-auth *,
-html body[data-page="home"] #hesedArchivesTopblock .hesed-add-content-btn *{color:inherit!important}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-auth-mark svg{
+  fill:none!important;stroke:currentColor!important;stroke-width:2!important;stroke-linecap:round!important;width:20px!important;height:20px!important;
+}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-auth-copy strong{color:var(--hn-text)!important}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-auth-copy small{color:var(--hn-muted)!important}
+/* Recherche : carré doré à gauche */
 html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-search{
-  border:1.5px solid var(--hn-line)!important;
+  border:1.5px solid var(--hn-line-soft)!important;
+  border-radius:26px!important;
   background:color-mix(in srgb,var(--hn-panel2) 85%,transparent)!important;
+}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-search input{color:var(--hn-text)!important}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-search-icon{
+  display:grid!important;place-items:center!important;
+  width:44px!important;height:44px!important;min-width:44px!important;
+  border:1.5px solid var(--hn-line)!important;
+  border-radius:12px!important;
+  background:var(--hn-fill)!important;
+  color:var(--hn-gold-text)!important;
+}
+html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-search-icon svg{
+  fill:none!important;stroke:currentColor!important;stroke-width:2.2!important;stroke-linecap:round!important;
 }
 html body[data-page="home"] #hesedArchivesTopblock .hesed-topblock-search>button{
   background:var(--hn-gold)!important;
   color:#1a1405!important;
 }
+/* Bouton d'options : rond sombre à contour doré */
+html body[data-page="home"] .hesed-hero-toggle{
+  width:48px!important;height:48px!important;border-radius:50%!important;
+  border:1.5px solid var(--hn-line-soft)!important;
+  background:color-mix(in srgb,var(--hn-panel2) 88%,transparent)!important;
+  color:var(--hn-gold-text)!important;
+  box-shadow:0 6px 18px color-mix(in srgb,var(--hn-gold) 12%,transparent)!important;
+}
+html body[data-page="home"] .hesed-hero-toggle svg{stroke:currentColor!important}
 
-/* Bandeau principal */
+/* ===== Héros animé : on rétablit ce que le style plat masquait ===== */
 html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph{
   border:1.5px solid var(--hn-line)!important;
-  border-radius:28px!important;
+  border-radius:30px!important;
   background:linear-gradient(160deg,var(--hn-panel1),var(--hn-panel2))!important;
   box-shadow:0 14px 38px var(--hn-glow),inset 0 0 50px color-mix(in srgb,var(--hn-gold) 7%,transparent)!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
 }
-html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before{background:transparent!important}
-html body[data-page="home"] #hesedMemoryHero .eyebrow{margin:0 auto 16px!important}
+/* grande forme qui se transforme (hexagone, cercle, triangle…) pilotée par hesed-hero-morph.js */
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before{
+  content:""!important;display:block!important;
+  position:absolute!important;inset:2% -6% 22% 22%!important;z-index:0!important;
+  clip-path:var(--hero-clip)!important;
+  border-radius:var(--hero-radius,50%)!important;
+  background:radial-gradient(circle at 32% 28%,color-mix(in srgb,var(--hn-gold) 52%,transparent),color-mix(in srgb,var(--hn-gold) 16%,transparent) 68%)!important;
+  opacity:.55!important;
+  filter:none!important;
+  transition:clip-path 1s cubic-bezier(.22,.61,.36,1),border-radius 1s cubic-bezier(.22,.61,.36,1),opacity 1s ease!important;
+}
+/* seconde forme plus grande, en bas à gauche */
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::after{
+  content:""!important;display:block!important;
+  position:absolute!important;inset:46% 6% -34% -18%!important;z-index:0!important;
+  clip-path:var(--hero-clip)!important;
+  border-radius:var(--hero-radius,50%)!important;
+  background:radial-gradient(circle at 60% 30%,color-mix(in srgb,var(--hn-gold) 38%,transparent),color-mix(in srgb,var(--hn-gold) 8%,transparent) 70%)!important;
+  opacity:.5!important;
+  transition:clip-path 1s cubic-bezier(.22,.61,.36,1),border-radius 1s cubic-bezier(.22,.61,.36,1),opacity 1s ease!important;
+}
+html body[data-page="home"] #hesedMemoryHero.is-split::before,
+html body[data-page="home"] #hesedMemoryHero.is-split::after{opacity:.14!important}
+/* motif alvéoles + orbites */
+html body[data-page="home"] #hesedMemoryHero .hero-motif{
+  display:block!important;
+  position:absolute!important;inset:0!important;z-index:1!important;
+  opacity:.32!important;pointer-events:none!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='86.6' viewBox='0 0 150 86.6'%3E%3Cpath d='M0 43.3 37.5 0h75L150 43.3 112.5 86.6h-75z' fill='none' stroke='%23e0a81a' stroke-opacity='.55' stroke-width='1'/%3E%3C/svg%3E")!important;
+  background-size:150px 86.6px!important;
+}
+html body[data-page="home"] #hesedMemoryHero .hero-split-blob{display:block!important;z-index:3!important}
+html body[data-page="home"] #hesedMemoryHero .hero-glow{
+  display:block!important;
+  position:absolute!important;border-radius:50%!important;pointer-events:none!important;z-index:1!important;
+  background:radial-gradient(circle,color-mix(in srgb,var(--hn-gold) 38%,transparent),transparent 68%)!important;
+  filter:blur(26px)!important;
+}
+html body[data-page="home"] #hesedMemoryHero .hero-glow.g1{width:240px!important;height:240px!important;left:-60px!important;top:-40px!important}
+html body[data-page="home"] #hesedMemoryHero .hero-glow.g2{width:280px!important;height:280px!important;right:-80px!important;bottom:-60px!important}
+/* filet doré + surtitre, comme Archives */
+html body[data-page="home"] #hesedMemoryHero .hero-rule{
+  display:block!important;
+  width:86px!important;height:4px!important;margin:0 0 20px!important;
+  border-radius:4px!important;
+  background:linear-gradient(90deg,var(--hn-gold),color-mix(in srgb,var(--hn-gold) 30%,transparent))!important;
+}
+html body[data-page="home"] #hesedMemoryHero .eyebrow{
+  display:block!important;
+  margin:0 0 12px!important;padding:0!important;border:0!important;background:none!important;
+  color:var(--hn-gold)!important;
+  font-size:.74rem!important;font-weight:800!important;letter-spacing:.28em!important;text-transform:uppercase!important;
+  -webkit-text-fill-color:var(--hn-gold)!important;
+}
 html body[data-page="home"] #hesedMemoryHero h1{color:var(--hn-text)!important;font-weight:800!important}
 html body[data-page="home"] #hesedMemoryHero h1 .accentword{color:var(--hn-gold)!important;-webkit-text-fill-color:var(--hn-gold)!important}
 html body[data-page="home"] #hesedMemoryHero p.sub{color:var(--hn-muted)!important}
+/* recherche du héros : visible, icône dorée + bouton Rechercher */
+html body[data-page="home"] #hesedMemorySearch{
+  display:flex!important;align-items:center!important;gap:10px!important;
+  box-sizing:border-box!important;width:100%!important;max-width:620px!important;
+  margin:24px auto 0!important;padding:8px!important;
+  border:1.5px solid var(--hn-line-soft)!important;
+  border-radius:30px!important;
+  background:color-mix(in srgb,var(--hn-panel2) 90%,transparent)!important;
+  box-shadow:0 10px 26px color-mix(in srgb,var(--hn-gold) 12%,transparent)!important;
+}
+html body[data-page="home"] #hesedMemorySearch::before{
+  content:"\2315";
+  display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;
+  border:1.5px solid var(--hn-line);border-radius:12px;background:var(--hn-fill);
+  color:var(--hn-gold-text);font-size:1.15rem;
+}
 html body[data-page="home"] #hesedMemorySearch input{
-  border:1.5px solid var(--hn-line)!important;
-  background:color-mix(in srgb,var(--hn-panel2) 88%,transparent)!important;
-  color:var(--hn-text)!important;
+  flex:1 1 auto!important;min-width:0!important;
+  border:0!important;background:transparent!important;box-shadow:none!important;
+  color:var(--hn-text)!important;outline:0!important;
 }
 html body[data-page="home"] #hesedMemorySearch button{
+  flex:0 0 auto!important;
+  min-height:44px!important;padding:0 16px!important;
   background:var(--hn-gold)!important;
   color:#1a1405!important;
-  border:1.5px solid var(--hn-gold)!important;
+  border:0!important;border-radius:22px!important;
   font-weight:800!important;
 }
+html body[data-page="home"] #hesedMemorySearchStatus,
+html body[data-page="home"] .hesed-memory-search-status{color:var(--hn-muted)!important}
 
 /* Titres de section */
 html body[data-page="home"] .section-heading h2{color:var(--hn-text)!important;font-weight:800!important}
@@ -138,7 +260,6 @@ html body[data-page="home"] .home-cards>.home-card:nth-child(even){border-radius
 html body[data-page="home"] .home-cards>.home-card:nth-child(2){animation-delay:.07s}
 html body[data-page="home"] .home-cards>.home-card:nth-child(3){animation-delay:.14s}
 html body[data-page="home"] .home-cards>.home-card:last-child:nth-child(odd){min-height:128px!important}
-/* motif fantôme dans le coin */
 html body[data-page="home"] .home-card::after{
   content:""!important;display:block!important;
   position:absolute!important;right:-26px!important;top:-18px!important;left:auto!important;bottom:auto!important;
@@ -147,7 +268,6 @@ html body[data-page="home"] .home-card::after{
   border-radius:26px!important;background:none!important;
   transform:rotate(18deg)!important;opacity:1!important;pointer-events:none!important;
 }
-/* pastille de tête : le compteur, ou "Pédagogie" pour l'assistante */
 html body[data-page="home"] .home-card[href="assistant.html"]::before{content:"Pédagogie"!important;order:-1!important}
 html body[data-page="home"] .home-card-copy{display:contents!important}
 html body[data-page="home"] .home-card .card-stat{order:-1!important;max-width:calc(100% - 52px)!important;flex-wrap:wrap!important}
@@ -161,7 +281,6 @@ html body[data-page="home"] .home-card-copy>small{
   color:var(--hn-muted)!important;
   font-size:.76rem!important;
 }
-/* icône en carré doré, coin haut droit */
 html body[data-page="home"] .home-card .card-symbol{
   position:absolute!important;right:12px!important;top:12px!important;
   display:grid!important;place-items:center!important;
@@ -260,6 +379,7 @@ html body[data-page="home"] .site-footer{
   html body[data-page="home"] .home-cards{padding:12px!important;gap:10px!important}
   html body[data-page="home"] .home-cards>.home-card{min-height:166px!important;padding:14px 13px!important}
   html body[data-page="home"] .home-card-copy>strong{font-size:1.02rem!important}
+  html body[data-page="home"] #hesedMemorySearch button{padding:0 12px!important;font-size:.85rem!important}
 }
 @media(min-width:900px){
   html body[data-page="home"] .home-action-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
@@ -267,4 +387,6 @@ html body[data-page="home"] .site-footer{
 @media(prefers-reduced-motion:reduce){
   html body[data-page="home"] .home-cards>.home-card{animation:none!important}
   html body[data-page="home"] .home-card:hover{transform:none!important}
+  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before,
+  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::after{transition:none!important}
 }
