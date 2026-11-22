@@ -6,7 +6,7 @@
 
   var isMemory = hero.id === "hesedMemoryHero";
   var hiddenKey = isMemory ? "eneles:memory-hero-hidden" : "eneles:home-hero-hidden";
-  var sizeKey = isMemory ? "eneles:memory-hero-size-v1" : "eneles:archives-hero-size-v1";
+  var sizeKey = isMemory ? "eneles:memory-hero-size-v2" : "eneles:archives-hero-size-v1";
   var controlRow = hero.previousElementSibling;
   if (!controlRow || !controlRow.classList.contains("hesed-hero-controls")) {
     controlRow = document.createElement("div");
@@ -124,6 +124,11 @@
     handles.style.setProperty("top", rect.top + "px", "important");
     handles.style.setProperty("width", rect.width + "px", "important");
     handles.style.setProperty("height", rect.height + "px", "important");
+    // Poignées gauche/droite centrées sur la partie visible du bloc (il peut dépasser l'écran).
+    var barTop = toolbar.hidden ? window.innerHeight : toolbar.getBoundingClientRect().top;
+    var visTop = Math.max(rect.top, 0), visBottom = Math.min(rect.bottom, barTop - 8);
+    var mid = visBottom > visTop ? (visTop + visBottom) / 2 - rect.top : rect.height / 2;
+    handles.style.setProperty("--hh-mid", Math.round(mid) + "px");
   }
 
   function saveSize() {
@@ -134,10 +139,26 @@
     customSize = true;
   }
 
+  // Hauteur "naturelle" du contenu. hesed-hero-tune.css étire .hero-inner (align-self:stretch) et
+  // laisse ses enfants grandir : inner.scrollHeight valait alors la hauteur du bloc elle-même,
+  // donc la hauteur minimale suivait la hauteur actuelle et le bloc ne pouvait que s'allonger.
+  // On retire l'étirement le temps de la mesure (inline + !important, prioritaire sur toute feuille).
+  function naturalContentHeight(inner) {
+    var prev = inner.style.getPropertyValue("align-self");
+    var prevPriority = inner.style.getPropertyPriority("align-self");
+    inner.style.setProperty("align-self", "flex-start", "important");
+    var height = inner.getBoundingClientRect().height;
+    if (prev) inner.style.setProperty("align-self", prev, prevPriority);
+    else inner.style.removeProperty("align-self");
+    return height;
+  }
+
   function contentMinHeight() {
     var inner = hero.querySelector(".hero-inner"), computed = window.getComputedStyle(hero);
-    var padding = (parseFloat(computed.paddingTop) || 0) + (parseFloat(computed.paddingBottom) || 0);
-    return Math.max(300, (inner ? inner.scrollHeight : 220) + padding + 12);
+    var chrome = (parseFloat(computed.paddingTop) || 0) + (parseFloat(computed.paddingBottom) || 0) +
+      (parseFloat(computed.borderTopWidth) || 0) + (parseFloat(computed.borderBottomWidth) || 0);
+    var content = inner ? naturalContentHeight(inner) : 220;
+    return Math.max(300, Math.ceil(content + chrome + 4));
   }
 
   window.hesedSetHeroVisible = function (visible) {
@@ -362,13 +383,13 @@
   ].join("\n");
   style.textContent += [
     ".hesed-hero-options-menu{position:fixed!important;top:0;left:0;right:auto;z-index:2147483000!important;max-height:min(75vh,520px)!important;overflow:auto!important;overscroll-behavior:contain!important}",
-    ".hesed-hero-resize-toolbar{z-index:2147483000!important;}",
+    ".hesed-hero-resize-toolbar{z-index:2147483003!important;}",
     ".hesed-hero-resize-handles{position:fixed!important;inset:auto!important;right:auto!important;bottom:auto!important;width:0;height:0;z-index:2147483001!important;overflow:visible!important;pointer-events:none!important;transform:none!important}",
     ".hesed-hero-resize-handle{position:absolute!important;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;touch-action:none!important;appearance:none!important;-webkit-appearance:none!important;z-index:2147483002!important}",
     ".hesed-hero-resize-handle.handle-n{top:-16px!important;left:calc(50% - 27px)!important;width:54px!important;height:32px!important;min-width:54px!important;min-height:32px!important;border-radius:14px!important;cursor:ns-resize!important}",
     ".hesed-hero-resize-handle.handle-s{bottom:-16px!important;left:calc(50% - 27px)!important;width:54px!important;height:32px!important;min-width:54px!important;min-height:32px!important;border-radius:14px!important;cursor:ns-resize!important}",
-    ".hesed-hero-resize-handle.handle-e{right:-16px!important;top:calc(50% - 27px)!important;width:32px!important;height:54px!important;min-width:32px!important;min-height:54px!important;border-radius:14px!important;cursor:ew-resize!important}",
-    ".hesed-hero-resize-handle.handle-w{left:-16px!important;top:calc(50% - 27px)!important;width:32px!important;height:54px!important;min-width:32px!important;min-height:54px!important;border-radius:14px!important;cursor:ew-resize!important}",
+    ".hesed-hero-resize-handle.handle-e{right:-16px!important;top:calc(var(--hh-mid,50%) - 27px)!important;width:32px!important;height:54px!important;min-width:32px!important;min-height:54px!important;border-radius:14px!important;cursor:ew-resize!important}",
+    ".hesed-hero-resize-handle.handle-w{left:-16px!important;top:calc(var(--hh-mid,50%) - 27px)!important;width:32px!important;height:54px!important;min-width:32px!important;min-height:54px!important;border-radius:14px!important;cursor:ew-resize!important}",
     ".hesed-hero-resize-handle.handle-ne{top:-16px!important;right:-16px!important;width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;cursor:nesw-resize!important}",
     ".hesed-hero-resize-handle.handle-nw{top:-16px!important;left:-16px!important;width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;cursor:nwse-resize!important}",
     ".hesed-hero-resize-handle.handle-se{bottom:-16px!important;right:-16px!important;width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;cursor:nwse-resize!important}",
