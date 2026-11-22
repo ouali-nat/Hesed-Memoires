@@ -15,71 +15,22 @@
     var header=document.createElement('header');
     header.className='hesed-organic-site-header';
     header.id='hesedArchivesTopblock';
-    header.setAttribute('aria-label','En-t\u0018te permanent Hesed M\u001bmoire');
+    header.setAttribute('aria-label','En-tête permanent Hesed Mémoire');
     header.innerHTML=
       '<div class="wrap header-inner">'+
         '<div class="brand">'+
-          '<div aria-hidden="true" class="brand-logo" id="brandLogo"></div>'+
+          '<div aria-hidden="true" class="brand-logo" id="brandLogo"><img src="/assets/aurore-logo.png" alt="" decoding="async"></div>'+
           '<div class="brand-text">'+
-            '<div class="site-name">Hesed M\u001bmoire</div>'+
+            '<div class="site-name">Hesed Mémoire</div>'+
             '<div class="site-tag">Un espace personnel pour apprendre et se souvenir.</div>'+
           '</div>'+
         '</div>'+
         '<form class="hesed-topblock-search" id="hesedTopblockSearch" role="search">' +
         '<div class="search-box" id="searchIconHost">' +
-          '<input id="hesedTopblockSearchInput" placeholder="Rechercher une m\u001bmorisation, une carte ou un cours\u2026" type="text"/>'+
+          '<input id="hesedTopblockSearchInput" placeholder="Rechercher une mémorisation, une carte ou un cours…" type="text"/>'+
         '</div>'+
         '</form>' +
         '<button aria-label="Ouvrir Hesed" class="aurore-ia-header-btn" id="auroreIAHeaderBtn" title="Hesed" type="button"><span aria-hidden="true">\u2726</span><span>Hesed</span></button>'+
-        '<div aria-label="Choix du th\u0018me" class="theme-switch" id="themeSwitch" role="group">'+
-          '<button aria-pressed="false" class="theme-switch-btn" data-theme-choice="sombre" title="Th\u0018me sombre" type="button"><span class="theme-icon-host" data-icon="moon"></span></button>'+
-          '<button aria-pressed="false" class="theme-switch-btn" data-theme-choice="clair" title="Th\u0018me clair" type="button"><span class="theme-icon-host" data-icon="sun"></span></button>'+
-          '<button aria-pressed="false" class="theme-switch-btn" data-theme-choice="systeme" title="Th\u0018me syst\u0018me" type="button"><span class="theme-icon-host" data-icon="monitor"></span></button>'+
-        '</div>'+
-        '<div class="color-theme-picker" id="colorThemePicker">'+
-          '<button aria-expanded="false" aria-haspopup="true" class="color-theme-btn" id="colorThemeBtn" title="Couleur du site" type="button">'+
-            '<span aria-hidden="true" class="color-theme-btn-dot" id="colorThemeBtnDot"></span>'+
-          '</button>'+
-          '<div aria-hidden="true" aria-label="Choisir la couleur du site" class="color-theme-flyout" id="colorThemeFlyout" role="menu">'+
-            '<div class="color-theme-flyout-head">'+
-              '<span>Couleur du site</span>'+
-              '<strong id="colorThemeFlyoutCurrent">Violet</strong>'+
-            '</div>'+
-            '<div class="color-theme-flyout-scroll" id="colorThemeFlyoutScroll">'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="violet" title="Violet" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="rouge" title="Rouge" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="vert" title="Vert" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="bleu" title="Bleu" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="orange" title="Orange" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="rose" title="Rose" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="indigo" title="Indigo" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="emeraude" title="\u0013meraude" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="lime" title="Citron vert" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="corail" title="Corail" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="bordeaux" title="Bordeaux" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="azur" title="Azur" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="jaune" title="Jaune" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="cyan" title="Cyan" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="turquoise" title="Turquoise" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="sarcelle" title="Sarcelle" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="magenta" title="Magenta" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="fuchsia" title="Fuchsia" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="pourpre" title="Pourpre" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="prune" title="Prune" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="or" title="Or" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="ambre" title="Ambre" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="menthe" title="Menthe" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="lavande" title="Lavande" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="safran" title="Safran" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="petrole-cuivre" title="P\u001atrole & cuivre" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="nuit-peche" title="Nuit & p\u001ache" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="prune-rouge" title="Prune & rouge" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="terre-orange" title="Terre & orange" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="rose-sable" title="Rose poudr\u001ae" type="button"></button>'+
-              '<button aria-pressed="false" class="theme-color-swatch" data-color-choice="sarcelle-creme" title="Sarcelle & cr\u0018me" type="button"></button>'+
-            '</div>'+
-          '</div>'+
-        '</div>'+
       '</div>'+
       '<div class="auth-zone" id="authZone">'+
         '<button class="hesed-topblock-auth" id="hesedTopblockAuth" type="button">' +
@@ -177,7 +128,7 @@
     }
 
     // Sync auth state
-    var authButton=header.querySelector('#btnOuvrirProfil,#btnDeconnexion');
+    var authButton=header.querySelector('#hesedTopblockAuth,#btnOuvrirProfil,#btnDeconnexion');
     function syncAuth(value){
       var session=sessionFrom(value),user=session&&session.user;
       var userChip=header.querySelector('#userChip');
@@ -238,10 +189,23 @@
     }
 
     // Search form sync with hero
-    var headerSearchInput=header.querySelector('#headerSearchInput');
+    var headerSearchInput=header.querySelector('#hesedTopblockSearchInput');
     var heroInput=document.getElementById('hesedMemorySearchInput');
     var heroForm=document.getElementById('hesedMemorySearch');
     var topForm=document.getElementById('hesedTopblockSearch');
+    if(topForm&&!topForm.dataset.bound){
+      topForm.dataset.bound='1';
+      topForm.addEventListener('submit',function(e){
+        e.preventDefault();
+        var query=headerSearchInput?headerSearchInput.value.trim():'';
+        if(heroInput&&heroForm){
+          heroInput.value=query;
+          heroForm.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));
+        }else{
+          window.location.href='mes-memoires.html'+(query?'?q='+encodeURIComponent(query):'');
+        }
+      });
+    }
     if(headerSearchInput&&!headerSearchInput.dataset.bound){
       headerSearchInput.dataset.bound='1';
       if(heroInput){
