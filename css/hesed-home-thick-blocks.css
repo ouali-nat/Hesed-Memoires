@@ -1,0 +1,110 @@
+/* Hesed Mémoire — blocs de l'accueil plus épais ("plus de farine").
+   Bordures 2px, ombres franches en couches, tranche basse, fond plus dense, padding généreux.
+   Chargé en dernier : il surcharge les feuilles précédentes. */
+
+html body[data-page="home"]{
+  --thick-edge:color-mix(in srgb,var(--accent) 62%,var(--border));
+  --thick-shadow:0 2px 0 color-mix(in srgb,var(--accent) 38%,transparent),
+                 0 12px 26px rgba(0,0,0,.30),
+                 0 4px 10px rgba(0,0,0,.20);
+  --thick-inset:inset 0 1px 0 rgba(255,255,255,.20),
+                inset 0 -4px 0 color-mix(in srgb,var(--accent) 24%,transparent);
+}
+html[data-theme="light"] body[data-page="home"]{
+  --thick-shadow:0 2px 0 color-mix(in srgb,var(--accent) 34%,transparent),
+                 0 10px 22px rgba(20,20,40,.18),
+                 0 3px 8px rgba(20,20,40,.12);
+  --thick-inset:inset 0 1px 0 rgba(255,255,255,.7),
+                inset 0 -4px 0 color-mix(in srgb,var(--accent) 18%,transparent);
+}
+
+/* Bloc du haut (marque, connexion, recherche) */
+html body[data-page="home"] .hesed-archives-topblock{
+  border:2px solid var(--thick-edge)!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 20%,var(--surface)),color-mix(in srgb,var(--accent) 10%,var(--surface)))!important;
+  box-shadow:var(--thick-shadow),var(--thick-inset)!important;
+}
+
+/* Bandeau principal */
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph{
+  border:2px solid var(--thick-edge)!important;
+  box-shadow:0 3px 0 color-mix(in srgb,var(--accent) 40%,transparent),
+             0 18px 38px rgba(0,0,0,.34),
+             0 6px 14px rgba(0,0,0,.22),
+             var(--thick-inset)!important;
+}
+
+/* Cadre des espaces */
+html body[data-page="home"] .home-cards{
+  border:2px solid var(--thick-edge)!important;
+  padding:16px!important;
+  gap:16px!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),color-mix(in srgb,var(--accent) 9%,var(--surface)))!important;
+  box-shadow:var(--thick-shadow),var(--thick-inset)!important;
+}
+
+/* Cartes (espaces + "Allez plus loin") */
+html body[data-page="home"] .home-cards>.home-card,
+html body[data-page="home"] .home-action-grid>.home-action-card{
+  border:2px solid var(--thick-edge)!important;
+  min-height:182px!important;
+  padding:24px 20px 22px!important;
+  background:
+    radial-gradient(115% 85% at 100% 0%,color-mix(in srgb,var(--accent-light,var(--accent)) 26%,transparent),transparent 66%),
+    linear-gradient(145deg,
+      color-mix(in srgb,var(--accent) 28%,var(--surface)),
+      color-mix(in srgb,var(--accent) 18%,var(--surface)) 62%,
+      color-mix(in srgb,var(--accent) 24%,var(--surface)))!important;
+  box-shadow:var(--thick-shadow),var(--thick-inset)!important;
+}
+html body[data-page="home"] .home-card:hover,
+html body[data-page="home"] .home-action-card:hover{
+  box-shadow:0 3px 0 color-mix(in srgb,var(--accent) 45%,transparent),
+             0 18px 32px rgba(0,0,0,.34),
+             0 6px 12px rgba(0,0,0,.22),
+             var(--thick-inset)!important;
+}
+html body[data-page="home"] .home-card .card-symbol,
+html body[data-page="home"] .home-action-card .action-icon{
+  border:2px solid color-mix(in srgb,var(--accent) 55%,var(--border))!important;
+  background:color-mix(in srgb,var(--accent) 30%,var(--surface))!important;
+  box-shadow:0 3px 0 color-mix(in srgb,var(--accent) 35%,transparent),0 6px 12px rgba(0,0,0,.2)!important;
+}
+html body[data-page="home"] .home-card-copy>strong,
+html body[data-page="home"] .home-action-card>strong{font-weight:850!important}
+
+/* Bandeau "Ajouter un contenu" et fenêtre de présentation */
+html body[data-page="home"] .create-banner,
+html body[data-page="home"] .hesed-window-card{
+  border:2px solid var(--thick-edge)!important;
+  box-shadow:var(--thick-shadow),var(--thick-inset)!important;
+}
+html body[data-page="home"] .create-banner{
+  min-height:76px!important;
+  padding:16px 22px!important;
+  background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 32%,var(--surface)),color-mix(in srgb,var(--accent) 16%,var(--surface)) 78%)!important;
+}
+html body[data-page="home"] .create-banner .create-plus{
+  box-shadow:0 3px 0 rgba(0,0,0,.25),0 6px 12px rgba(0,0,0,.25)!important;
+}
+
+/* Pied de page */
+html body[data-page="home"] .site-footer{
+  border-top:2px solid var(--thick-edge)!important;
+  box-shadow:0 -6px 18px rgba(0,0,0,.18)!important;
+}
+
+@media(max-width:600px){
+  html body[data-page="home"] .home-cards{padding:11px!important;gap:11px!important}
+  html body[data-page="home"] .home-cards>.home-card,
+  html body[data-page="home"] .home-action-grid>.home-action-card{
+    min-height:172px!important;
+    padding:18px 13px 16px!important;
+    box-shadow:0 2px 0 color-mix(in srgb,var(--accent) 38%,transparent),0 9px 18px rgba(0,0,0,.28),0 3px 7px rgba(0,0,0,.18),var(--thick-inset)!important;
+  }
+  html body[data-page="home"] .create-banner{min-height:68px!important;padding:12px 14px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html body[data-page="home"] .home-card:hover,
+  html body[data-page="home"] .home-action-card:hover{transform:none!important}
+}
