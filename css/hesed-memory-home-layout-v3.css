@@ -56,7 +56,8 @@ body>header.hesed-organic-site-header .hesed-topblock-auth{
 }
 body>header.hesed-organic-site-header .hesed-topblock-auth[hidden],
 body>header.hesed-organic-site-header #userChip[hidden],
-body>header.hesed-organic-site-header #userAvatar[hidden]{display:none!important}
+body>header.hesed-organic-site-header #userAvatar[hidden],
+body>header.hesed-organic-site-header #userIconHost[hidden]{display:none!important}
 body>header.hesed-organic-site-header .hesed-topblock-auth-mark,
 body>header.hesed-organic-site-header #userIconHost{
   display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;
