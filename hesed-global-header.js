@@ -13,7 +13,7 @@
 
   function buildMarkup(){
     var header=document.createElement('header');
-    header.className='hesed-organic-site-header';
+    header.className='hesed-organic-site-header hesed-archives-topblock';
     header.id='hesedArchivesTopblock';
     header.setAttribute('aria-label','En-t\u0018te permanent Hesed M\u001bmoire');
     header.innerHTML=
@@ -99,9 +99,9 @@
       '<button aria-label="Installer Hesed" class="pwa-install-btn" id="pwaInstallBtn" type="button"><span aria-hidden="true">\u21e9</span> Installer</button>'+
       '<a class="deposer-btn" id="btnDeposer" href="creer.html"><span id="uploadIconHost"></span> Ajouter du contenu</a>'+
       '<div class="hesed-topblock-tools">'+
-        '<div class="hesed-topblock-mode-slot" id="hesedTopblockModeSlot" aria-label="Mode d\u0019affichage"></div>'+
+        '<div class="hesed-topblock-mode-slot" id="hesedTopblockModeSlot" aria-label="Mode d’affichage"></div>'+
         '<div class="hesed-topblock-palette-slot" id="hesedTopblockPaletteSlot" aria-label="Palette de couleurs"></div>'+
-      '</div>' +
+      '</div>';
     return header;
   }
 
@@ -238,7 +238,7 @@
     }
 
     // Search form sync with hero
-    var headerSearchInput=header.querySelector('#headerSearchInput');
+    var headerSearchInput=header.querySelector('#hesedTopblockSearchInput');
     var heroInput=document.getElementById('hesedMemorySearchInput');
     var heroForm=document.getElementById('hesedMemorySearch');
     var topForm=document.getElementById('hesedTopblockSearch');
@@ -253,7 +253,16 @@
           if(headerSearchInput.value!==heroInput.value)headerSearchInput.value=heroInput.value;
         });
       }
-      headerSearchInput.addEventListener('keydown',function(e){
+      if(topForm&&!topForm.dataset.bound){
+      topForm.dataset.bound='1';
+      topForm.addEventListener('submit',function(e){
+        e.preventDefault();
+        var query=headerSearchInput.value.trim();
+        if(heroInput&&heroForm){heroInput.value=query;heroForm.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));}
+        else window.location.href='mes-memoires.html'+(query?'?q='+encodeURIComponent(query):'');
+      });
+    }
+    headerSearchInput.addEventListener('keydown',function(e){
         if(e.key==='Enter'){
           e.preventDefault();
           var query=headerSearchInput.value.trim();
