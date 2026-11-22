@@ -1,0 +1,71 @@
+/* Hesed Mémoire — héros d'accueil : dimensions fiables + animation centrée et épaisse.
+   Chargé après hesed-home-thick-blocks.css : il remplace les règles de taille et de formes du héros. */
+
+/* ===== Dimensions : pleine largeur du contenu, hauteur proportionnelle, plus de calc(100% - 4mm) ===== */
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph{
+  position:relative!important;
+  left:auto!important;right:auto!important;
+  box-sizing:border-box!important;
+  width:100%!important;max-width:100%!important;
+  height:auto!important;
+  min-height:clamp(470px,64vw,560px)!important;
+  margin:0 0 28px!important;
+  padding:clamp(36px,6vw,60px) clamp(16px,4vw,48px)!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+}
+html body[data-page="home"] #hesedMemoryHero .hero-inner{
+  position:relative!important;z-index:5!important;
+  width:100%!important;max-width:820px!important;
+  margin:0 auto!important;
+}
+
+/* ===== Animation centrée : une anneau doré épais qui change de forme au milieu du héros ===== */
+/* anneau extérieur (la "matière" épaisse) */
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before{
+  content:""!important;display:block!important;
+  position:absolute!important;
+  inset:auto!important;left:50%!important;top:50%!important;
+  width:min(86%,500px)!important;height:auto!important;aspect-ratio:1/1!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:0!important;
+  clip-path:var(--hero-clip)!important;
+  border-radius:var(--hero-radius,50%)!important;
+  background:linear-gradient(135deg,var(--hn-gold),color-mix(in srgb,var(--hn-gold) 52%,#000))!important;
+  opacity:.92!important;
+  filter:drop-shadow(0 0 22px color-mix(in srgb,var(--hn-gold) 55%,transparent))!important;
+}
+/* intérieur plein, légèrement rétréci : ce qui reste visible de l'anneau fait l'épaisseur */
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::after{
+  content:""!important;display:block!important;
+  position:absolute!important;
+  inset:auto!important;left:50%!important;top:50%!important;
+  width:min(86%,500px)!important;height:auto!important;aspect-ratio:1/1!important;
+  transform:translate(-50%,-50%) scale(.88)!important;
+  z-index:0!important;
+  clip-path:var(--hero-clip)!important;
+  border-radius:var(--hero-radius,50%)!important;
+  background:
+    radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--hn-gold) 34%,transparent),transparent 68%),
+    linear-gradient(160deg,var(--hn-panel1),var(--hn-panel2))!important;
+  opacity:1!important;
+  filter:none!important;
+}
+/* pendant l'éclatement en trois bulles (hesed-hero-morph.js) : l'anneau s'efface */
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph.is-split::before,
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph.is-split::after{opacity:.1!important}
+
+/* les trois bulles épaisses autour du centre */
+html body[data-page="home"] #hesedMemoryHero .hero-split-blob-core{
+  border:5px solid color-mix(in srgb,var(--hn-gold) 85%,#fff)!important;
+  background:linear-gradient(135deg,var(--hn-gold),color-mix(in srgb,var(--hn-gold) 50%,#000))!important;
+  box-sizing:border-box!important;
+}
+
+@media(max-width:600px){
+  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph{
+    min-height:480px!important;
+    padding:34px 16px!important;
+  }
+  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before,
+  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::after{width:min(92%,380px)!important}
+}
