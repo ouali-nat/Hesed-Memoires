@@ -113,6 +113,9 @@ body>header.hesed-organic-site-header .header-inner{min-width:0!important;}
 
 /* Hesed Mémoire — raccord visuel avec les tokens et les proportions d'Archives. */
 html[data-color-theme]{
+  --accent:var(--theme-primary);
+  --accent-light:var(--theme-secondary);
+  --accent-deep:var(--theme-strong);
   --theme-soft:color-mix(in srgb,var(--theme-primary) 12%,transparent);
   --theme-softer:color-mix(in srgb,var(--theme-primary) 7%,transparent);
   --theme-border:color-mix(in srgb,var(--theme-primary) 30%,var(--border));
