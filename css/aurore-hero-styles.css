@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Hero section - styles from Archives
+   Copied from aurore-visual-refonte.css and aurore-home.css
+   ========================================================================== */
+
+/* Base hero styles - using hesedMemoryHero id for compatibility */
+#hesedMemoryHero.hero{
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  padding:72px 42px 54px;
+  margin-top:10px;
+  border-radius:32px;
+  background:
+    radial-gradient(circle at 85% 10%,color-mix(in srgb,var(--accent-light) 22%,transparent),transparent 28%),
+    radial-gradient(circle at 10% 90%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 32%),
+    linear-gradient(145deg,color-mix(in srgb,var(--bg) 98%,#000),color-mix(in srgb,var(--accent-deep) 80%,var(--bg)) 55%,var(--bg));
+  border:1px solid color-mix(in srgb,var(--accent-light) 14%,var(--border));
+}
+
+.hero-motif{opacity:.10;background-size:150px 130px;}
+.hero-glow{opacity:.24;}
+.hero-inner{max-width:790px;}
+.hero-rule{width:56px;height:4px;margin-bottom:20px;}
+.hero .eyebrow{font-size:.7rem;letter-spacing:.22em;color:color-mix(in srgb,var(--accent-light) 80%,var(--text));}
+.hero h1{font-size:clamp(2.15rem,5vw,4.2rem);line-height:1.04;letter-spacing:-.055em;max-width:760px;}
+.hero h1 .accentword{background:linear-gradient(90deg,color-mix(in srgb,var(--accent-light) 40%,transparent),color-mix(in srgb,var(--accent) 60%,transparent));-webkit-background-clip:text;background-clip:text;}
+.hero p.sub{font-size:1.02rem;color:color-mix(in srgb,var(--text) 80%,var(--muted));max-width:650px;}
+.hero-rule{background:linear-gradient(90deg,var(--accent),var(--accent-light));}
+
+/* Search form styles */
+#hesedMemorySearch.auraster-home-search{
+  display:flex;
+  align-items:center;
+  gap:0;
+  max-width:760px;
+  margin-top:28px;
+  border-radius:16px;
+  padding:15px 17px;
+  background:color-mix(in srgb,var(--bg) 72%,transparent);
+}
+
+.auraster-home-search .home-search-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:66px;
+  height:44px;
+  margin-right:2px;
+  position:relative;
+  color:color-mix(in srgb,var(--accent-light) 80%,var(--text));
+  flex:0 0 66px;
+}
+
+.auraster-home-search .home-search-icon::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:7px;
+  bottom:7px;
+  width:1px;
+  background:color-mix(in srgb,var(--accent-light) 20%,transparent);
+}
+
+.auraster-home-search .home-search-icon svg{
+  width:19px;
+  height:19px;
+  flex-shrink:0;
+}
+
+.auraster-home-search .home-search-icon:empty::before{
+  content:"";
+  display:block;
+  width:19px;
+  height:19px;
+  background-color:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.auraster-home-search .home-search-submit{
+  flex:0 0 auto;
+  min-height:42px;
+  padding:0 15px;
+  border:0;
+  border-radius:12px;
+  background:var(--accent);
+  color:var(--text);
+  cursor:pointer;
+  font:700 .82rem/1 "Plus Jakarta Sans","Segoe UI",Arial,sans-serif;
+  box-shadow:0 5px 14px color-mix(in srgb,var(--accent) 40%,transparent);
+}
+
+.auraster-home-search .home-search-submit:hover{filter:brightness(1.08);}
+.auraster-home-search .home-search-submit:focus-visible{outline:2px solid color-mix(in srgb,var(--accent-light) 80%,var(--text));outline-offset:2px;}
+
+.auraster-home-search input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:var(--text);
+  padding-left:28px;
+  font:inherit;
+  font-size:1rem;
+  line-height:1.4;
+}
+
+.auraster-home-search input::placeholder{color:color-mix(in srgb,var(--text) 60%,var(--muted));}
+
+/* Light theme styles */
+[data-theme="light"] #hesedMemoryHero.hero{background:linear-gradient(145deg,color-mix(in srgb,var(--bg) 98%,#000),color-mix(in srgb,var(--accent-deep) 80%,var(--bg)) 58%,var(--bg))!important;border-color:color-mix(in srgb,var(--accent-light) 12%,var(--border))!important;}
+[data-theme="light"] #hesedMemorySearch.auraster-home-search{background:color-mix(in srgb,var(--surface) 88%,transparent)!important;border:1px solid color-mix(in srgb,var(--border) 50%,transparent)!important;color:var(--text)!important;box-shadow:0 12px 30px color-mix(in srgb,var(--accent) 8%,transparent);}
+[data-theme="light"] #hesedMemorySearch.auraster-home-search input{color:var(--text)!important;}
+
+/* Responsive styles */
+@media(max-width:640px){
+  .hero{padding:44px 22px 34px;border-radius:26px;}
+  .hero h1{font-size:2.35rem;}
+  .hero p.sub{font-size:.94rem;}
+}
