@@ -1,31 +1,55 @@
-/* Hesed Mémoire — héros d'accueil : dimensions fiables + animation centrée et épaisse.
-   Chargé après hesed-home-thick-blocks.css : il remplace les règles de taille et de formes du héros. */
+/* Hesed Mémoire — héros d'accueil : dimensions proportionnelles + animation centrée et épaisse.
+   Chargé après hesed-home-thick-blocks.css : il remplace les règles de taille et de formes du héros.
+   Principe : quand l'écran rétrécit, la hauteur ET les textes rétrécissent avec la largeur (unités vw),
+   donc le bloc ne s'allonge plus. */
 
-/* ===== Dimensions : pleine largeur du contenu, hauteur proportionnelle, plus de calc(100% - 4mm) ===== */
+/* ===== Dimensions ===== */
 html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph{
   position:relative!important;
   left:auto!important;right:auto!important;
   box-sizing:border-box!important;
   width:100%!important;max-width:100%!important;
   height:auto!important;
-  min-height:clamp(470px,64vw,560px)!important;
-  margin:0 0 28px!important;
-  padding:clamp(36px,6vw,60px) clamp(16px,4vw,48px)!important;
+  /* la hauteur suit la largeur : aussi haut que l'anneau animé (92 % de la largeur, 500px max) */
+  min-height:min(92vw,500px)!important;
+  margin:0 0 clamp(18px,4vw,28px)!important;
+  padding:clamp(22px,5.5vw,56px) clamp(14px,4vw,48px)!important;
   display:flex!important;align-items:center!important;justify-content:center!important;
 }
 html body[data-page="home"] #hesedMemoryHero .hero-inner{
   position:relative!important;z-index:5!important;
   width:100%!important;max-width:820px!important;
-  margin:0 auto!important;
+  margin:0 auto!important;padding:0!important;
+}
+/* textes proportionnels à la largeur : pas de retour à la ligne en cascade */
+html body[data-page="home"] #hesedMemoryHero .hero-rule{margin:0 0 clamp(8px,2.6vw,20px)!important}
+html body[data-page="home"] #hesedMemoryHero .eyebrow{
+  margin:0 0 clamp(6px,1.8vw,12px)!important;
+  font-size:clamp(.6rem,2.2vw,.74rem)!important;
+  letter-spacing:clamp(.14em,.9vw,.28em)!important;
+}
+html body[data-page="home"] #hesedMemoryHero h1{
+  font-size:clamp(1.4rem,6.8vw,3.35rem)!important;
+  line-height:1.08!important;
+  text-wrap:balance!important;
+}
+html body[data-page="home"] #hesedMemoryHero p.sub{
+  margin:clamp(6px,2vw,14px) auto 0!important;
+  font-size:clamp(.76rem,2.9vw,1rem)!important;
+  line-height:1.4!important;
+}
+html body[data-page="home"] #hesedMemorySearch{
+  margin:clamp(12px,3.6vw,24px) auto 0!important;
+  padding:clamp(5px,1.4vw,8px)!important;
 }
 
-/* ===== Animation centrée : une anneau doré épais qui change de forme au milieu du héros ===== */
+/* ===== Animation centrée : un anneau doré épais qui change de forme au milieu du héros ===== */
 /* anneau extérieur (la "matière" épaisse) */
 html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before{
   content:""!important;display:block!important;
   position:absolute!important;
   inset:auto!important;left:50%!important;top:50%!important;
-  width:min(86%,500px)!important;height:auto!important;aspect-ratio:1/1!important;
+  width:min(92%,500px)!important;height:auto!important;aspect-ratio:1/1!important;
   transform:translate(-50%,-50%)!important;
   z-index:0!important;
   clip-path:var(--hero-clip)!important;
@@ -39,7 +63,7 @@ html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-
   content:""!important;display:block!important;
   position:absolute!important;
   inset:auto!important;left:50%!important;top:50%!important;
-  width:min(86%,500px)!important;height:auto!important;aspect-ratio:1/1!important;
+  width:min(92%,500px)!important;height:auto!important;aspect-ratio:1/1!important;
   transform:translate(-50%,-50%) scale(.88)!important;
   z-index:0!important;
   clip-path:var(--hero-clip)!important;
@@ -59,13 +83,4 @@ html body[data-page="home"] #hesedMemoryHero .hero-split-blob-core{
   border:5px solid color-mix(in srgb,var(--hn-gold) 85%,#fff)!important;
   background:linear-gradient(135deg,var(--hn-gold),color-mix(in srgb,var(--hn-gold) 50%,#000))!important;
   box-sizing:border-box!important;
-}
-
-@media(max-width:600px){
-  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph{
-    min-height:480px!important;
-    padding:34px 16px!important;
-  }
-  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before,
-  html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::after{width:min(92%,380px)!important}
 }
