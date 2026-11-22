@@ -1,0 +1,121 @@
+/* Hesed Mémoire — parité chromatique et relief avec Hesed Archives.
+   Couche d'harmonisation limitée à l'accueil : aucune logique métier. */
+html[data-color-theme="violet"]{--accent:#8B5CF6;--accent-light:#C084FC;--accent-deep:#6D28D9}
+html[data-color-theme="rouge"]{--accent:#E05260;--accent-light:#FF8A96;--accent-deep:#C93648}
+html[data-color-theme="vert"]{--accent:#2FA66A;--accent-light:#75D89C;--accent-deep:#198754}
+html[data-color-theme="bleu"]{--accent:#3B82F6;--accent-light:#7DB3FF;--accent-deep:#1D4ED8}
+html[data-color-theme="orange"]{--accent:#E8791A;--accent-light:#FFB36B;--accent-deep:#C85C0D}
+html[data-color-theme="rose"]{--accent:#DB2777;--accent-light:#F9A8D4;--accent-deep:#BE185D}
+html[data-color-theme="lime"]{--accent:#84CC16;--accent-light:#BEF264;--accent-deep:#4D7C0F}
+html[data-color-theme="bordeaux"]{--accent:#9F1239;--accent-light:#FB7185;--accent-deep:#881337}
+html[data-color-theme="azur"]{--accent:#0EA5E9;--accent-light:#7DD3FC;--accent-deep:#0369A1}
+html[data-color-theme="jaune"]{--accent:#D9A406;--accent-light:#FCD34D;--accent-deep:#8A6100}
+html[data-color-theme="olive"]{--accent:#6B7A2A;--accent-light:#A7B85F;--accent-deep:#4A5520}
+html[data-color-theme="chocolat"]{--accent:#8A4A1C;--accent-light:#D49A6A;--accent-deep:#5C300F}
+html[data-color-theme="sauge"]{--accent:#6E9A7E;--accent-light:#B5D3BF;--accent-deep:#4A7A5C}
+html[data-color-theme="magenta"]{--accent:#D946EF;--accent-light:#F0ABFC;--accent-deep:#A21CAF}
+html[data-color-theme="petrole-cuivre"]{--accent:#104C64;--accent-light:#D59D80;--accent-deep:#0D1D25}
+html[data-color-theme="prune-rouge"]{--accent:#341A2C;--accent-light:#B51A2B;--accent-deep:#161E2F}
+html[data-color-theme="rose-sable"]{--accent:#EFC1B5;--accent-light:#FDF3E7;--accent-deep:#3B2621}
+html[data-color-theme="sarcelle-creme"]{--accent:#0D6B70;--accent-light:#FDF3E7;--accent-deep:#0D1D25}
+
+html[data-color-theme]{
+  --theme-primary:var(--accent);
+  --theme-secondary:var(--accent-light);
+  --theme-strong:var(--accent-deep);
+  --soft:color-mix(in srgb,var(--accent) 14%,transparent);
+  --soft-border:color-mix(in srgb,var(--accent) 40%,var(--border));
+  --line:color-mix(in srgb,var(--accent) 22%,var(--border));
+}
+html body[data-page="home"]{
+  --hn-gold:var(--accent-light,var(--accent));
+  --hn-gold-text:var(--accent-light,var(--accent));
+  --hn-line:color-mix(in srgb,var(--accent) 58%,transparent);
+  --hn-line-soft:color-mix(in srgb,var(--accent) 40%,transparent);
+  --hn-glow:color-mix(in srgb,var(--accent) 22%,transparent);
+  --hn-fill:color-mix(in srgb,var(--accent) 14%,transparent);
+  --hero-theme-start:color-mix(in srgb,var(--accent) 30%,var(--surface));
+  --hero-theme-mid:color-mix(in srgb,var(--accent-light) 38%,var(--surface-raised));
+  --hero-theme-end:var(--surface);
+  --hero-theme-accent:var(--accent);
+}
+html[data-theme="light"] body[data-page="home"]{
+  --hn-gold-text:var(--accent-deep,var(--accent));
+  --hn-card1:color-mix(in srgb,var(--accent) 5%,#fff);
+  --hn-card2:#fff;
+  --hn-panel1:color-mix(in srgb,var(--accent) 7%,#fff);
+  --hn-panel2:#fff;
+  --hn-text:#211d2e;
+  --hn-muted:#625c70;
+}
+html[data-theme="dark"] body[data-page="home"]{
+  --hn-gold-text:var(--accent-light,var(--accent));
+  --hn-card1:color-mix(in srgb,var(--accent) 10%,#171726);
+  --hn-card2:#0e0e18;
+  --hn-panel1:color-mix(in srgb,var(--accent) 9%,#14121a);
+  --hn-panel2:#0b0b11;
+  --hn-text:#fff;
+  --hn-muted:#b8b8c6;
+}
+html body[data-page="home"] .home-cards{
+  gap:13px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html body[data-page="home"] .home-cards>.home-card{
+  min-height:176px!important;
+  padding:22px 20px!important;
+  gap:8px!important;
+  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--border))!important;
+  border-radius:26px!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 12%,var(--surface)),color-mix(in srgb,var(--accent) 4%,var(--surface-raised)) 72%,var(--surface))!important;
+  box-shadow:0 13px 28px color-mix(in srgb,var(--accent) 13%,rgba(0,0,0,.16)),inset 0 1px 0 rgba(255,255,255,.24),inset 0 -3px 8px rgba(0,0,0,.035)!important;
+}
+html body[data-page="home"] .home-card .card-symbol,
+html body[data-page="home"] .home-card::before,
+html body[data-page="home"] .home-card::after{
+  display:none!important;
+  content:none!important;
+}
+html body[data-page="home"] .home-card .card-stat{
+  display:block!important;
+  width:auto!important;
+  margin:7px 0 0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:var(--muted)!important;
+  font-size:.72rem!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+  line-height:1.4!important;
+  text-transform:none!important;
+}
+html body[data-page="home"] .home-card .card-stat b{color:inherit!important;font-weight:inherit!important}
+html body[data-page="home"] .home-card:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 17px 34px color-mix(in srgb,var(--accent) 17%,rgba(0,0,0,.18)),inset 0 1px 0 rgba(255,255,255,.28)!important;
+}
+html body[data-page="home"] #hesedMemoryHero{
+  --hero-theme-start:color-mix(in srgb,var(--accent) 30%,var(--surface));
+  --hero-theme-mid:color-mix(in srgb,var(--accent-light) 38%,var(--surface-raised));
+  --hero-theme-end:var(--surface);
+  --hero-theme-accent:var(--accent);
+}
+html[data-theme="light"] body[data-page="home"] #hesedMemoryHero h1{color:#211d2e!important}
+html[data-theme="light"] body[data-page="home"] #hesedMemoryHero h1 .accentword{color:var(--accent-deep)!important;-webkit-text-fill-color:var(--accent-deep)!important}
+html[data-theme="dark"] body[data-page="home"] #hesedMemoryHero h1{color:#f7f5ff!important}
+html[data-theme="dark"] body[data-page="home"] #hesedMemoryHero h1 .accentword{color:var(--accent-light)!important;-webkit-text-fill-color:var(--accent-light)!important}
+html body[data-page="home"] #hesedMemoryHero .eyebrow{color:var(--accent-light)!important}
+html body[data-page="home"] #hesedMemoryHero .hero-rule{background:var(--accent-light)!important}
+@media(max-width:560px){
+  html body[data-page="home"] .home-cards>.home-card{min-height:158px!important;padding:18px 16px!important;border-radius:22px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html body[data-page="home"] .home-card{transition:none!important}
+}
