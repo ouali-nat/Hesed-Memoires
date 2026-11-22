@@ -1,134 +1,5 @@
-/* Hesed Archives — panneau organique et commandes réorganisées selon le croquis. */
-body>header.hesed-organic-site-header{
-  position:relative!important;top:auto!important;z-index:60!important;isolation:isolate!important;
-  overflow:visible!important;width:min(calc(100% - 24px),1280px)!important;max-width:1280px!important;
-  margin:10px auto 12px!important;padding:0!important;background:transparent!important;
-  border:0!important;border-radius:0!important;box-shadow:none!important;
-}
-body>header.hesed-organic-site-header::before{
-  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  border:1px solid color-mix(in srgb,var(--theme-primary,#8B5CF6) 34%,var(--bordure));
-  background:radial-gradient(ellipse at 18% 4%,color-mix(in srgb,var(--theme-primary,#8B5CF6) 12%,transparent),transparent 55%),color-mix(in srgb,var(--papier) 96%,transparent);
-  box-shadow:0 16px 38px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.11);
-  -webkit-backdrop-filter:blur(20px) saturate(1.25);backdrop-filter:blur(20px) saturate(1.25);
-  -webkit-mask:url("./hesed-organic-header-mask-20261104-final2.svg") 0 0/100% 100% no-repeat;
-  mask:url("./hesed-organic-header-mask-20261104-final2.svg") 0 0/100% 100% no-repeat;
-}
-body>header.hesed-organic-site-header .header-inner{
-  position:relative!important;z-index:1!important;display:grid!important;width:100%!important;max-width:none!important;
-  height:auto!important;min-height:0!important;margin:0!important;padding:14px 22px 30px!important;
-  box-sizing:border-box!important;grid-template-columns:minmax(0,1fr) minmax(180px,1.1fr) auto auto!important;
-  grid-template-rows:48px 42px 40px!important;
-  grid-template-areas:"brand brand brand auth" "upload search search search" "theme theme color ia"!important;
-  align-items:center!important;justify-items:stretch!important;gap:9px 14px!important;
-}
-body>header.hesed-organic-site-header .brand{grid-area:brand!important;min-width:0!important;gap:10px!important}
-body>header.hesed-organic-site-header .brand-logo{width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important;flex:0 0 46px!important;border-radius:50%!important;overflow:hidden!important}
-body>header.hesed-organic-site-header .brand-text{min-width:0!important}
-body>header.hesed-organic-site-header .brand-text .site-name{font-size:1.04rem!important;line-height:1.15!important}
-body>header.hesed-organic-site-header .brand-text .site-tag{font-size:.64rem!important}
-body>header.hesed-organic-site-header .auth-zone{grid-area:auth!important;justify-self:end!important;min-width:0!important}
-body>header.hesed-organic-site-header .user-chip{max-width:100%!important}
-body>header.hesed-organic-site-header .deposer-btn{grid-area:upload!important;justify-self:start!important;width:100%!important;min-width:0!important;min-height:40px!important;padding:9px 14px!important;border-radius:13px!important;white-space:nowrap!important}
-body>header.hesed-organic-site-header .search-box{grid-area:search!important;width:100%!important;max-width:none!important;min-width:0!important;min-height:40px!important;padding:6px 13px!important;border-radius:999px!important}
-body>header.hesed-organic-site-header .search-box input{min-width:0!important;width:100%!important}
-body>header.hesed-organic-site-header .theme-switch{grid-area:theme!important;justify-self:start!important;white-space:nowrap!important}
-body>header.hesed-organic-site-header .color-theme-picker{grid-area:color!important;justify-self:center!important}
-body>header.hesed-organic-site-header .aurore-ia-header-btn{grid-area:ia!important;justify-self:end!important;width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;padding:0!important;border-radius:50%!important}
-body>header.hesed-organic-site-header .pwa-install-btn{display:none!important}
-@media(max-width:900px){
- body>header.hesed-organic-site-header{width:calc(100% - 14px)!important;max-width:none!important;margin:8px auto 12px!important}
- body>header.hesed-organic-site-header .header-inner{
-  padding:11px 13px 27px!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
-  grid-template-rows:43px 39px 39px 38px!important;
-  grid-template-areas:"brand auth" "upload upload" "search ia" "theme color"!important;gap:7px 9px!important;
- }
- body>header.hesed-organic-site-header .brand{gap:8px!important}
- body>header.hesed-organic-site-header .brand-logo{width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important;flex-basis:40px!important}
- body>header.hesed-organic-site-header .brand-text .site-name{font-size:.9rem!important}
- body>header.hesed-organic-site-header .brand-text .site-tag{display:none!important}
- body>header.hesed-organic-site-header .auth-zone{justify-self:end!important}
- body>header.hesed-organic-site-header .user-chip{padding:3px 5px!important;font-size:.72rem!important}
- body>header.hesed-organic-site-header .user-chip-info{gap:4px!important;padding-inline:2px 4px!important}
- body>header.hesed-organic-site-header .user-chip-logout{padding:5px!important}
- body>header.hesed-organic-site-header .user-chip-logout-label{display:none!important}
- body>header.hesed-organic-site-header .deposer-btn{width:min(72%,430px)!important;justify-self:start!important;min-height:38px!important;padding:7px 12px!important;font-size:.75rem!important}
- body>header.hesed-organic-site-header .search-box{width:min(58vw,430px)!important;max-width:430px!important;justify-self:start!important;min-height:38px!important;padding:5px 9px!important}
- body>header.hesed-organic-site-header .search-box input{font-size:.73rem!important}
- body>header.hesed-organic-site-header .aurore-ia-header-btn{width:35px!important;height:35px!important;min-width:35px!important;min-height:35px!important}
- body>header.hesed-organic-site-header .aurore-ia-header-btn span:last-child{display:none!important}
- body>header.hesed-organic-site-header .theme-switch{justify-self:start!important;gap:3px!important}
- body>header.hesed-organic-site-header .theme-switch-btn{width:29px!important;height:29px!important}
- body>header.hesed-organic-site-header .color-theme-picker{justify-self:end!important}
- body>header.hesed-organic-site-header .color-theme-btn{width:36px!important;height:36px!important}
-}
-@media(max-width:380px){
- body>header.hesed-organic-site-header .header-inner{padding-inline:9px!important;column-gap:7px!important}
- body>header.hesed-organic-site-header .brand-text .site-name{font-size:.82rem!important}
- body>header.hesed-organic-site-header .deposer-btn{font-size:.69rem!important;padding-inline:8px!important}
- body>header.hesed-organic-site-header .search-box{width:min(58vw,430px)!important}
-}
-
-
-/* Hesed — correctif ciblé du sélecteur de thème et retrait des flèches décoratives. */
-body>header.hesed-organic-site-header .theme-switch{
-  display:inline-flex!important;width:max-content!important;max-width:100%!important;
-  min-width:0!important;box-sizing:border-box!important;flex:0 1 auto!important;
-  flex-shrink:1!important;flex-wrap:nowrap!important;overflow:hidden!important;
-  justify-self:start!important;
-}
-body>header.hesed-organic-site-header .theme-switch-btn{
-  box-sizing:border-box!important;width:29px!important;min-width:0!important;
-  max-width:29px!important;height:29px!important;min-height:29px!important;
-  flex:0 1 29px!important;
-}
-body>header.hesed-organic-site-header .header-inner{min-width:0!important;}
-.home-recents-arrow:not(button),.go-arrow,
-.personal-space-compact-card::after,.service-client-link::after,
-.home-five-level::after,
-.breadcrumb button:not(:first-child)::before,
-.breadcrumb .current:not(:first-child)::before,
-.profile-launcher-role>i,
-.profile-form-modal .profile-save-row button>b,
-.aurore-logout-confirm>span[aria-hidden="true"],
-.wiki-back-btn>span[aria-hidden="true"],.download-progress-icon{
-  display:none!important;content:none!important;
-}
-.home-recents-cta{padding-right:20px!important;}
-.personal-space-compact-card{padding-right:20px!important;}
-.service-client-link{padding-right:11px!important;}
-.aurora-personal-end-btn{
-  min-width:64px!important;width:auto!important;height:auto!important;
-  min-height:32px!important;padding:7px 11px!important;border-radius:10px!important;
-  font-size:.72rem!important;line-height:1.2!important;
-}
-@media(max-width:560px){
-  .home-recents-cta{padding-right:16px!important;}
-  .personal-space-compact-card{padding-right:14px!important;}
-}
-
-/* Breadcrumb separators are structural decoration, not navigation controls. */
-.breadcrumb .sep{display:none!important;}
-
-
-/* Hesed Mémoire — raccord visuel avec les tokens et les proportions d'Archives. */
-html[data-color-theme]{
-  --accent:var(--theme-primary);
-  --accent-light:var(--theme-secondary);
-  --accent-deep:var(--theme-strong);
-  --theme-soft:color-mix(in srgb,var(--theme-primary) 12%,transparent);
-  --theme-softer:color-mix(in srgb,var(--theme-primary) 7%,transparent);
-  --theme-border:color-mix(in srgb,var(--theme-primary) 30%,var(--border));
-  --theme-shadow:color-mix(in srgb,var(--theme-primary) 18%,transparent);
-  --theme-on-accent:#fff;
-  --fond:var(--bg);
-  --papier:var(--surface);
-  --bordure:var(--border);
-  --gris:var(--muted);
-  --theme-tertiary:var(--theme-extra-1,var(--theme-secondary));
-  --theme-warm:var(--theme-extra-2,var(--theme-primary));
-  --theme-deep:var(--theme-extra-3,var(--theme-strong));
-}
+/* Hesed Mémoire — thème et accueil alignés sur la palette réelle d'Hesed Archives. */
+:root{--hesed-dodecagon:polygon(50% 0%,75% 6.7%,93.3% 25%,100% 50%,93.3% 75%,75% 93.3%,50% 100%,25% 93.3%,6.7% 75%,0 50%,6.7% 25%,25% 6.7%)}
 html[data-color-theme="violet"]{--theme-primary:#8B5CF6;--theme-secondary:#C084FC;--theme-strong:#6D28D9}
 html[data-color-theme="rouge"]{--theme-primary:#E05260;--theme-secondary:#FF8A96;--theme-strong:#C93648}
 html[data-color-theme="vert"]{--theme-primary:#2FA66A;--theme-secondary:#75D89C;--theme-strong:#198754}
@@ -147,6 +18,17 @@ html[data-color-theme="petrole-cuivre"]{--theme-primary:#104C64;--theme-secondar
 html[data-color-theme="prune-rouge"]{--theme-primary:#341A2C;--theme-secondary:#B51A2B;--theme-strong:#161E2F}
 html[data-color-theme="rose-sable"]{--theme-primary:#EFC1B5;--theme-secondary:#FDF3E7;--theme-strong:#3B2621}
 html[data-color-theme="sarcelle-creme"]{--theme-primary:#0D6B70;--theme-secondary:#FDF3E7;--theme-strong:#0D1D25}
+html[data-color-theme]{
+  --accent:var(--theme-primary);--accent-light:var(--theme-secondary);--accent-deep:var(--theme-strong);
+  --theme-soft:color-mix(in srgb,var(--theme-primary) 12%,transparent);
+  --theme-softer:color-mix(in srgb,var(--theme-primary) 7%,transparent);
+  --theme-border:color-mix(in srgb,var(--theme-primary) 30%,var(--border));
+  --theme-shadow:color-mix(in srgb,var(--theme-primary) 18%,transparent);
+  --fond:var(--bg);--papier:var(--surface);--bordure:var(--border);--gris:var(--muted);
+  --theme-tertiary:var(--theme-extra-1,var(--theme-secondary));
+  --theme-warm:var(--theme-extra-2,var(--theme-primary));
+  --theme-deep:var(--theme-extra-3,var(--theme-strong));
+}
 html[data-theme="light"][data-color-theme]{
   --theme-soft:color-mix(in srgb,var(--theme-primary) 10%,#fff);
   --theme-softer:color-mix(in srgb,var(--theme-primary) 5%,#fff);
@@ -163,87 +45,65 @@ html[data-color-theme] body{
 html[data-color-theme] .brand-logo{background:linear-gradient(135deg,var(--theme-primary),var(--theme-secondary),var(--theme-warm))!important}
 html[data-color-theme] .deposer-btn{background:linear-gradient(135deg,var(--theme-strong),var(--theme-primary))!important;box-shadow:0 10px 30px var(--theme-shadow)!important}
 
-/* Le bandeau d'Archives utilise ces deux emplacements réels ; les contrôles
-   natifs de démonstration du script partagé restent masqués. */
-body>header.hesed-organic-site-header .header-inner{
-  grid-template-areas:"brand brand brand auth" "upload search search search" "theme theme color ia"!important;
+/* Les couleurs choisies pilotent aussi l'animation du héros, pas un violet fixe. */
+html[data-color-theme] body[data-page="home"]{
+  --hn-gold:var(--theme-primary)!important;
+  --hn-gold-text:var(--theme-secondary)!important;
+  --hn-line:color-mix(in srgb,var(--theme-primary) 58%,transparent)!important;
+  --hn-line-soft:color-mix(in srgb,var(--theme-primary) 40%,transparent)!important;
+  --hn-glow:color-mix(in srgb,var(--theme-primary) 28%,transparent)!important;
+  --hn-fill:color-mix(in srgb,var(--theme-primary) 14%,transparent)!important;
 }
-body>header.hesed-organic-site-header #themeSwitch,
-body>header.hesed-organic-site-header #colorThemePicker{display:none!important}
-body>header.hesed-organic-site-header .hesed-topblock-mode-slot{grid-area:theme!important;justify-self:start!important}
-body>header.hesed-organic-site-header .hesed-topblock-palette-slot{grid-area:color!important;justify-self:center!important}
-body>header.hesed-organic-site-header .hesed-topblock-tools{display:contents!important}
-body>header.hesed-organic-site-header .hesed-topblock-search{grid-area:search!important;width:100%!important;min-width:0!important}
-body>header.hesed-organic-site-header .hesed-topblock-search .search-box{width:100%!important;max-width:none!important}
-body>header.hesed-organic-site-header .hesed-topblock-search input{width:100%!important;min-width:0!important}
-body>header.hesed-organic-site-header .brand-logo img{display:block;width:100%;height:100%;object-fit:contain}
-
-/* Palette d'Archives : mêmes 18 choix, pastilles compactes et ancrage net. */
-body>header.hesed-organic-site-header .color-theme-wrap{position:relative!important}
-body>header.hesed-organic-site-header .color-theme-btn{
-  width:42px!important;height:42px!important;border-radius:50%!important;
-  border:1px solid color-mix(in srgb,var(--theme-primary) 44%,var(--border))!important;
-  background:color-mix(in srgb,var(--surface) 90%,transparent)!important;
-  box-shadow:0 5px 16px var(--theme-shadow),inset 0 1px 0 rgba(255,255,255,.12)!important;
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph{
+  height:clamp(390px,92vw,500px)!important;min-height:0!important;
+  display:flex!important;align-items:stretch!important;justify-content:center!important;
+  background:transparent!important;border:0!important;
 }
-body>header.hesed-organic-site-header .color-theme-btn .color-dot{
-  display:block!important;width:15px!important;height:15px!important;border-radius:50%!important;
-  background:linear-gradient(135deg,var(--theme-primary),var(--theme-secondary))!important;
-  box-shadow:0 0 0 4px color-mix(in srgb,var(--theme-primary) 13%,transparent)!important;
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph .hero-inner{
+  height:100%!important;min-height:0!important;flex:1 1 auto!important;
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:flex-start!important;padding:0!important;
 }
-body>header.hesed-organic-site-header .color-theme-panel{
-  position:absolute!important;right:0!important;top:calc(100% + 10px)!important;z-index:120!important;
-  width:min(290px,calc(100vw - 34px))!important;max-height: min(62vh,390px)!important;
-  overflow:auto!important;padding:12px!important;border-radius:20px!important;
-  border:1px solid var(--theme-border)!important;background:color-mix(in srgb,var(--surface) 97%,var(--theme-primary) 3%)!important;
-  box-shadow:0 18px 46px rgba(0,0,0,.28)!important;
-}
-body>header.hesed-organic-site-header .color-theme-grid{
-  display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:9px!important;
-}
-body>header.hesed-organic-site-header .color-theme-choice{
-  width:30px!important;height:30px!important;min-width:30px!important;min-height:30px!important;
-  justify-self:center!important;border-radius:9px!important;border:2px solid rgba(255,255,255,.28)!important;
-  background:var(--swatch-color)!important;box-shadow:0 3px 8px rgba(0,0,0,.18)!important;
-}
-body>header.hesed-organic-site-header .color-theme-choice[aria-pressed="true"]{
-  outline:2px solid var(--theme-primary)!important;outline-offset:2px!important;
-}
-body>header.hesed-organic-site-header .color-theme-choice span{display:none!important}
-
-/* Héros : conserver l'animation organique existante, mais reprendre les
-   nuances et la force chromatique réelles de la palette d'Archives. */
-html body[data-page="home"]{--hn-gold:var(--theme-primary,var(--accent));--hn-gold-text:var(--theme-secondary,var(--accent-light))}
-html body[data-page="home"] #hesedMemoryHero{
-  border:0!important;isolation:isolate!important;
-  box-shadow:0 24px 58px color-mix(in srgb,var(--theme-primary) 22%,transparent)!important;
-}
-html body[data-page="home"] #hesedMemoryHero::before{
-  background:linear-gradient(145deg,
-    color-mix(in srgb,var(--theme-primary) 72%,var(--surface)),
-    color-mix(in srgb,var(--theme-secondary) 62%,var(--theme-primary)) 54%,
-    color-mix(in srgb,var(--theme-primary) 26%,var(--surface)))!important;
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::before{
+  background:linear-gradient(135deg,
+    color-mix(in srgb,var(--theme-primary) 74%,var(--surface)),
+    color-mix(in srgb,var(--theme-secondary) 62%,var(--theme-primary)) 52%,
+    color-mix(in srgb,var(--theme-strong) 48%,var(--surface)))!important;
   opacity:1!important;
+  filter:drop-shadow(0 18px 30px color-mix(in srgb,var(--theme-primary) 32%,transparent))!important;
+}
+html body[data-page="home"] #hesedMemoryHero.hesed-memory-hero.hero.aurore-hero-morph::after{
+  background:
+    radial-gradient(circle at 35% 28%,color-mix(in srgb,var(--theme-secondary) 24%,transparent),transparent 65%),
+    linear-gradient(155deg,color-mix(in srgb,var(--surface-raised) 86%,var(--theme-primary) 14%),var(--surface))!important;
+}
+html body[data-page="home"] #hesedMemoryHero .hero-inner .hero-rule{
+  background:linear-gradient(90deg,var(--theme-primary),var(--theme-secondary))!important;
 }
 html body[data-page="home"] #hesedMemoryHero .accentword{
   color:var(--theme-secondary)!important;-webkit-text-fill-color:var(--theme-secondary)!important;
 }
-html body[data-page="home"] #hesedMemoryHero .hero-glow{
-  background:radial-gradient(circle,var(--theme-secondary),transparent 68%)!important;
-  opacity:.22!important;
+html body[data-page="home"] #hesedMemoryHero p.sub{color:var(--text)!important}
+html body[data-page="home"] #hesedMemorySearch{
+  width:100%!important;max-width:100%!important;margin-top:auto!important;margin-bottom:0!important;
+  flex:0 0 auto!important;
 }
-html body[data-page="home"] #hesedMemoryHero .hero-rule{
-  background:linear-gradient(90deg,var(--theme-primary),var(--theme-secondary))!important;
+html body[data-page="home"] #hesedMemorySearch .home-search-submit{
+  background:linear-gradient(135deg,var(--theme-primary),var(--theme-strong))!important;
+  color:#fff!important;box-shadow:0 7px 18px var(--theme-shadow)!important;
+}
+html body[data-page="home"] .hero-glow{
+  background:radial-gradient(circle,var(--theme-secondary),transparent 68%)!important;
+  opacity:.28!important;
 }
 
-/* Blocs épais et doux : on retire les badges/icônes décoratifs superflus,
-   sans toucher aux liens ni aux compteurs utiles. */
+/* Cartes épaisses et souples, sans pictogrammes ni ornements parasites. */
 html body[data-page="home"] .home-card{
   position:relative!important;overflow:hidden!important;
   border-radius:30px 24px 32px 26px!important;
   border:1px solid color-mix(in srgb,var(--theme-primary) 30%,var(--border))!important;
-  background:linear-gradient(145deg,color-mix(in srgb,var(--surface-raised) 92%,var(--theme-primary) 8%),var(--surface))!important;
-  box-shadow:0 12px 28px color-mix(in srgb,var(--theme-primary) 10%,transparent),inset 0 1px 0 rgba(255,255,255,.34)!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface-raised) 94%,var(--theme-primary) 6%),var(--surface))!important;
+  box-shadow:0 12px 28px color-mix(in srgb,var(--theme-primary) 12%,transparent),inset 0 1px 0 rgba(255,255,255,.24)!important;
 }
 html body[data-page="home"] .home-card::before,
 html body[data-page="home"] .home-card::after,
@@ -251,20 +111,13 @@ html body[data-page="home"] .home-card .card-symbol,
 html body[data-page="home"] .home-card[href="assistant.html"]::before{
   content:none!important;display:none!important;
 }
+html body[data-page="home"] .home-card .home-card-copy{padding-top:0!important}
 html body[data-page="home"] .home-card .card-stat{
   display:block!important;width:auto!important;margin:0 0 8px!important;padding:0!important;
   border:0!important;border-radius:0!important;background:transparent!important;
   color:var(--theme-strong,var(--theme-primary))!important;
-  font-size:.68rem!important;letter-spacing:.07em!important;font-weight:800!important;
+  font-size:.68rem!important;letter-spacing:.04em!important;font-weight:800!important;
 }
-html body[data-page="home"] .home-card .home-card-copy{padding-top:0!important}
 html body[data-page="home"] .home-card strong{color:var(--text)!important}
 html body[data-page="home"] .home-card small{color:var(--muted)!important}
 html body[data-page="home"] .section-kicker{display:none!important}
-@media(max-width:900px){
-  body>header.hesed-organic-site-header .header-inner{
-    grid-template-areas:"brand auth" "upload upload" "search ia" "theme color"!important;
-  }
-  body>header.hesed-organic-site-header .hesed-topblock-mode-slot{grid-area:theme!important}
-  body>header.hesed-organic-site-header .hesed-topblock-palette-slot{grid-area:color!important}
-}
