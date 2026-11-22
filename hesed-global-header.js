@@ -25,9 +25,11 @@
             '<div class="site-tag">Un espace personnel pour apprendre et se souvenir.</div>'+
           '</div>'+
         '</div>'+
-        '<div class="search-box" id="searchIconHost">'+
+        '<form class="hesed-topblock-search" id="hesedTopblockSearch" role="search">' +
+        '<div class="search-box" id="searchIconHost">' +
           '<input id="hesedTopblockSearchInput" placeholder="Rechercher une m\u001bmorisation, une carte ou un cours\u2026" type="text"/>'+
         '</div>'+
+        '</form>' +
         '<button aria-label="Ouvrir Hesed" class="aurore-ia-header-btn" id="auroreIAHeaderBtn" title="Hesed" type="button"><span aria-hidden="true">\u2726</span><span>Hesed</span></button>'+
         '<div aria-label="Choix du th\u0018me" class="theme-switch" id="themeSwitch" role="group">'+
           '<button aria-pressed="false" class="theme-switch-btn" data-theme-choice="sombre" title="Th\u0018me sombre" type="button"><span class="theme-icon-host" data-icon="moon"></span></button>'+
@@ -80,6 +82,10 @@
         '</div>'+
       '</div>'+
       '<div class="auth-zone" id="authZone">'+
+        '<button class="hesed-topblock-auth" id="hesedTopblockAuth" type="button">' +
+          '<span class="hesed-topblock-auth-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></span>' +
+          '<span class="hesed-topblock-auth-copy"><strong class="hesed-topblock-auth-name">Connexion</strong><small class="hesed-topblock-auth-email">Accès à votre espace</small></span>' +
+        '</button>' +
         '<div id="gSignInBtn"></div>'+
         '<div class="user-chip" id="userChip" style="display:none;">'+
           '<button class="user-chip-info" id="btnOuvrirProfil" title="Voir mon profil" type="button">'+
@@ -95,7 +101,6 @@
       '<div class="hesed-topblock-tools">'+
         '<div class="hesed-topblock-mode-slot" id="hesedTopblockModeSlot" aria-label="Mode d\u0019affichage"></div>'+
         '<div class="hesed-topblock-palette-slot" id="hesedTopblockPaletteSlot" aria-label="Palette de couleurs"></div>'+
-      '<form class="hesed-topblock-search" id="hesedTopblockSearch" role="search" style="display:none;"><button type="submit" style="display:none;"></button></form>' +
       '</div>' +
     return header;
   }
