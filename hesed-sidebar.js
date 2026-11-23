@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  /* Feuilles de style chargées en dernier + bloc de présentation de l'accueil. */
+  /* Feuilles de style chargées en dernier. */
   var V='20261107-ui-cleanup-v1';
   function loadExtras(){
     if(!document.head||!document.body)return;
@@ -19,9 +19,6 @@
     var uiCleanup=document.querySelector('link[href*="hesed-ui-cleanup.css"]');
     if(!uiCleanup){uiCleanup=document.createElement('link');uiCleanup.rel='stylesheet';uiCleanup.href='./css/hesed-ui-cleanup.css?v=20261107-ui-cleanup-v1'}
     document.head.appendChild(uiCleanup);
-    if(document.body.dataset.page==='home'&&!document.querySelector('script[src*="hesed-home-presentation.js"]')){
-      var s=document.createElement('script');s.src='./hesed-home-presentation.js?v='+V;document.body.appendChild(s);
-    }
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',loadExtras,{once:true});else loadExtras();
 })();
