@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="css/hesed-memory-home-refine.css?v=20261107-memory-home-refine-v1">
   <link rel="stylesheet" href="css/hesed-home-thick-blocks.css?v=20261122-thick-blocks-v1">
   <link rel="stylesheet" href="css/hesed-home-hero-center.css?v=20261122-hero-center-v1">
+  <link rel="stylesheet" href="css/hesed-memory-experience.css?v=20261123-dashboard-v1">
 </head>
 <body data-page="home">
   <div class="ambient-bg" aria-hidden="true"></div>
@@ -117,6 +118,12 @@
       <div class="hesed-topblock-palette-slot" id="hesedTopblockPaletteSlot" aria-label="Palette de couleurs"></div>
     </div>
   </section>
+  <nav class="hesed-home-anchor-nav" aria-label="Navigation de l’accueil">
+    <a href="#home-dashboard">Mon espace</a>
+    <a href="#home-features">Les outils</a>
+    <a href="#home-method">La méthode</a>
+    <a href="#home-faq">Questions fréquentes</a>
+  </nav>
   <div class="hesed-hero-controls"><button type="button" class="hesed-hero-toggle hesed-hero-menu-trigger" id="hesedHeroMenuTrigger" aria-haspopup="menu" aria-expanded="false" aria-label="Options de l’accueil"><svg class="hesed-options-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h7M15 7h5M4 17h3M11 17h9"/><circle cx="13" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button></div>
   <section class="hero hesed-memory-hero aurore-hero-morph" id="hesedMemoryHero" aria-labelledby="hesedMemoryHeroTitle">
     <div class="hero-motif" aria-hidden="true"></div>
@@ -130,43 +137,263 @@
       <form class="hesed-memory-search" id="hesedMemorySearch" role="search"><input id="hesedMemorySearchInput" type="search" autocomplete="off" placeholder="Rechercher une mémorisation, une carte ou un cours…" aria-label="Rechercher dans Hesed Mémoire"><button type="submit">Rechercher</button></form><p class="hesed-memory-search-status" id="hesedMemorySearchStatus" aria-live="polite"></p>
     </div>
   </section>
-  <section class="home-section" aria-labelledby="home-tools-title">
-    <div class="section-heading"><div><p class="section-kicker">ESPACE PERSONNEL</p><h2 id="home-tools-title">Quel espace souhaitez-vous consulter&nbsp;?</h2></div></div>
-    <div class="home-cards">
-      <a class="home-card" href="choisir.html">
-        <span class="card-symbol symbol-notes" aria-hidden="true">▤</span>
-        <span class="home-card-copy"><strong>Ma bibliothèque</strong><small>Textes à mémoriser et séries de cartes.</small><span class="card-stat"><b id="homeMemoryCount">0 mémoire</b> · <b id="homeCardCount">0 carte</b></span></span>
+  <section class="home-section home-dashboard-section" id="home-dashboard" aria-labelledby="home-dashboard-title">
+    <div class="section-heading home-section-heading">
+      <div>
+        <p class="section-kicker">VOTRE ESPACE PERSONNEL</p>
+        <h2 id="home-dashboard-title">Tout votre apprentissage, au même endroit</h2>
+        <p class="section-intro">Retrouvez vos contenus et choisissez votre prochaine activité.</p>
+      </div>
+    </div>
 
+    <div class="home-cards" aria-label="Espaces Hesed Mémoire">
+      <a class="home-card home-card-library" href="choisir.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4.5 5.5h6l2 2h7v11h-15z"/><path d="M4.5 8h15"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Ma bibliothèque</strong>
+          <small>Vos textes, mémorisations et séries de cartes.</small>
+          <span class="card-stat"><b id="homeMemoryCount">0 mémoire</b><span aria-hidden="true">·</span><b id="homeCardCount">0 carte</b></span>
+        </span>
       </a>
-      <a class="home-card" href="revisions.html">
-        <span class="card-symbol symbol-review" aria-hidden="true">↻</span>
-        <span class="home-card-copy"><strong>Révisions du jour</strong><small>Vos cartes à revoir aujourd’hui.</small><span class="card-stat"><b id="homeDueCount">0 carte à réviser aujourd’hui</b></span></span>
 
+      <a class="home-card home-card-audio" href="mes-audios.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Mes audios</strong>
+          <small>Écoutez vos pistes, enregistrements et séquences.</small>
+          <span class="home-card-meta">Bibliothèque audio</span>
+        </span>
       </a>
-      <a class="home-card" href="assistant.html">
-        <span class="card-symbol symbol-review" aria-hidden="true">A</span>
-        <span class="home-card-copy"><strong>Assistante Hesed</strong><small>Cours, cartes, QCM et audio avec l’assistante pédagogique.</small></span>
 
+      <a class="home-card home-card-assistant" href="assistant.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3.5 14 9l5.5 2-5.5 2-2 5.5-2-5.5-5.5-2 5.5-2z"/><path d="m19 3 .7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Assistante Hesed</strong>
+          <small>Préparez des cours, cartes, QCM et contenus audio.</small>
+          <span class="home-card-meta">Accompagnement pédagogique</span>
+        </span>
+      </a>
+
+      <a class="home-card home-card-groups" href="groupes.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1a5.5 5.5 0 0 1 11 0v1z"/><path d="M16 5.5a3 3 0 0 1 0 5.8M17 14a4.5 4.5 0 0 1 3.5 4.4V19h-4"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Mes groupes</strong>
+          <small>Créez un espace de travail et apprenez ensemble.</small>
+          <span class="home-card-meta">Apprentissage collectif</span>
+        </span>
       </a>
     </div>
-  </section>
-  <a class="create-banner" href="creer.html">
-    <span class="create-plus" aria-hidden="true">＋</span>
-    <span class="create-copy"><strong>Ajouter un contenu</strong><small>Texte, cartes ou questions-réponses.</small></span>
 
-  </a>
-  <section class="home-section" aria-labelledby="home-discover-title">
-    <div class="section-heading"><div><p class="section-kicker">AUTRES POSSIBILITÉS</p><h2 id="home-discover-title">Allez plus loin</h2></div></div>
-    <div class="home-action-grid">
-      <a class="home-action-card" href="groupes.html"><span class="action-icon" aria-hidden="true">♧</span><strong>Rejoindre ou créer un groupe</strong><small>Travaillez ensemble dans un espace dédié.</small></a>
-      <a class="home-action-card" href="cartes-publiques.html"><span class="action-icon" aria-hidden="true">⌕</span><strong>Explorer les cartes et mémorisations</strong><small>Parcourez et ajoutez des contenus partagés.</small></a>
-      <div class="home-action-card is-coming"><span class="action-icon" aria-hidden="true">≡</span><strong>Faire mon résumé</strong><small>Préparez un résumé clair à partir de vos notes.</small><span class="coming-label">Bientôt disponible</span></div>
-      <div class="home-action-card is-coming"><span class="action-icon action-document-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3.5h8l4 4V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z"/><path d="M14 3.5V8h4M8 12h8M8 16h8"/></svg></span><strong>Produire ma dissertation</strong><small>Organisez une problématique, un plan et vos arguments.</small><span class="coming-label">Bientôt disponible</span></div>
+    <a class="home-review-row" href="revisions.html">
+      <span class="home-review-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M8 3.5v4M16 3.5v4M4 10h16M8 14h3M8 17h7"/></svg>
+      </span>
+      <span class="home-review-copy">
+        <strong>Révisions du jour</strong>
+        <small>Retrouvez les cartes qui arrivent à échéance.</small>
+      </span>
+      <span class="home-review-count" id="homeDueCount">0 carte à réviser aujourd’hui</span>
+    </a>
+
+    <a class="create-banner home-create-banner" href="creer.html">
+      <span class="create-plus" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </span>
+      <span class="create-copy">
+        <strong>Créer un nouveau contenu</strong>
+        <small>Ajoutez un texte, une mémorisation ou une série de cartes.</small>
+      </span>
+      <span class="home-create-action">Commencer</span>
+    </a>
+  </section>
+
+  <section class="home-section home-features-section" id="home-features" aria-labelledby="home-features-title">
+    <div class="section-heading home-section-heading">
+      <div>
+        <p class="section-kicker">LES OUTILS</p>
+        <h2 id="home-features-title">Plusieurs façons d’apprendre</h2>
+        <p class="section-intro">Choisissez le format qui correspond à votre manière de travailler.</p>
+      </div>
+    </div>
+    <div class="home-feature-grid">
+      <article class="home-feature-card">
+        <span class="home-feature-index">01</span>
+        <span class="home-feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 4.5h14v15H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        </span>
+        <h3>Textes et mémorisations</h3>
+        <p>Organisez vos cours en contenus et en blocs plus faciles à reprendre.</p>
+        <a href="creer-memoire.html">Créer une mémorisation</a>
+      </article>
+      <article class="home-feature-card">
+        <span class="home-feature-index">02</span>
+        <span class="home-feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4.5 5.5h15v13h-15z"/><path d="M8 9h8M8 13h3M14 13l1.5 1.5L18 12"/></svg>
+        </span>
+        <h3>Cartes et révisions</h3>
+        <p>Entraînez-vous avec des questions-réponses et retrouvez les cartes à revoir.</p>
+        <a href="revisions.html">Ouvrir les révisions</a>
+      </article>
+      <article class="home-feature-card">
+        <span class="home-feature-index">03</span>
+        <span class="home-feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 4.5h14v15H5z"/><path d="m9 9 1.8 1.8L15 7.5M9 15h6"/></svg>
+        </span>
+        <h3>QCM et entraînement</h3>
+        <p>Vérifiez vos acquis grâce aux questionnaires et aux différents modes de pratique.</p>
+        <a href="qcm.html">Découvrir les QCM</a>
+      </article>
+      <article class="home-feature-card">
+        <span class="home-feature-index">04</span>
+        <span class="home-feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></svg>
+        </span>
+        <h3>Écoute et répétition</h3>
+        <p>Retrouvez vos audios et adaptez la vitesse ou le nombre de répétitions.</p>
+        <a href="mes-audios.html">Ouvrir les audios</a>
+      </article>
     </div>
   </section>
 
+  <section class="home-section home-benefits-section" aria-labelledby="home-benefits-title">
+    <div class="section-heading home-section-heading">
+      <div>
+        <p class="section-kicker">POURQUOI HESED</p>
+        <h2 id="home-benefits-title">Un espace pensé pour progresser</h2>
+        <p class="section-intro">Des outils complémentaires, réunis dans une même expérience.</p>
+      </div>
+    </div>
+    <div class="home-benefit-grid">
+      <article class="home-benefit-card">
+        <span class="home-benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg>
+        </span>
+        <h3>À votre rythme</h3>
+        <p>Reprenez vos contenus et choisissez le mode de révision qui vous convient.</p>
+      </article>
+      <article class="home-benefit-card">
+        <span class="home-benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3.5 19 6v5.5c0 4.2-2.8 7.3-7 9-4.2-1.7-7-4.8-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <h3>Une continuité de travail</h3>
+        <p>Vos contenus restent accessibles sur l’appareil utilisé et peuvent être synchronisés avec Hesed ID.</p>
+      </article>
+      <article class="home-benefit-card">
+        <span class="home-benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 19v-1a5.5 5.5 0 0 1 11 0v1M14 16a4.5 4.5 0 0 1 7.5 3"/></svg>
+        </span>
+        <h3>Seul ou en groupe</h3>
+        <p>Travaillez dans votre espace personnel ou partagez des contenus avec d’autres apprenants.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-section home-method-section" id="home-method" aria-labelledby="home-method-title">
+    <div class="section-heading home-section-heading">
+      <div>
+        <p class="section-kicker">VOTRE PARCOURS</p>
+        <h2 id="home-method-title">De la découverte à la maîtrise</h2>
+        <p class="section-intro">Un chemin simple pour transformer vos contenus en apprentissages actifs.</p>
+      </div>
+    </div>
+    <div class="home-method-grid">
+      <article class="home-method-step">
+        <span>1</span>
+        <div><h3>Rassemblez</h3><p>Ajoutez un cours, un texte ou des cartes dans votre bibliothèque.</p></div>
+      </article>
+      <article class="home-method-step">
+        <span>2</span>
+        <div><h3>Entraînez-vous</h3><p>Utilisez les cartes, les QCM, les modes de pratique ou l’audio.</p></div>
+      </article>
+      <article class="home-method-step">
+        <span>3</span>
+        <div><h3>Revenez-y</h3><p>Consultez vos révisions du jour et poursuivez votre progression.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-section home-faq-section" id="home-faq" aria-labelledby="home-faq-title">
+    <div class="section-heading home-section-heading">
+      <div>
+        <p class="section-kicker">BESOIN D’AIDE ?</p>
+        <h2 id="home-faq-title">Questions fréquentes</h2>
+        <p class="section-intro">Les réponses utiles avant de commencer.</p>
+      </div>
+    </div>
+    <div class="home-faq-grid">
+      <details class="home-faq-item">
+        <summary>Dois-je créer un compte pour utiliser Hesed Mémoire ?</summary>
+        <p>Vous pouvez accéder à l’espace sans compte sur cet appareil. La connexion avec Hesed ID est nécessaire pour utiliser la synchronisation cloud.</p>
+      </details>
+      <details class="home-faq-item">
+        <summary>Quels contenus puis-je préparer ?</summary>
+        <p>Vous pouvez organiser des mémorisations, créer des cartes, vous entraîner avec des QCM et gérer des contenus audio.</p>
+      </details>
+      <details class="home-faq-item">
+        <summary>Comment retrouver mes contenus sur un autre appareil ?</summary>
+        <p>Connectez-vous avec Hesed ID pour activer la synchronisation cloud. En mode visiteur, les contenus restent associés à l’appareil utilisé.</p>
+      </details>
+      <details class="home-faq-item">
+        <summary>Puis-je apprendre avec d’autres personnes ?</summary>
+        <p>Oui. Les espaces de groupes permettent de travailler ensemble et la bibliothèque publique donne accès à des contenus partagés.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="home-final-cta" aria-labelledby="home-final-cta-title">
+    <div>
+      <p class="section-kicker">CONTINUEZ À APPRENDRE</p>
+      <h2 id="home-final-cta-title">Votre prochaine révision commence ici.</h2>
+      <p>Retrouvez vos contenus ou créez votre prochaine mémorisation.</p>
+    </div>
+    <div class="home-final-actions">
+      <a class="home-final-primary" href="revisions.html">Voir mes révisions</a>
+      <a class="home-final-secondary" href="creer.html">Créer un contenu</a>
+    </div>
+  </section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-inner"><strong>Hesed Mémoire</strong><small>Apprendre à son rythme, sans frais pour les fonctions essentielles.</small></div></footer>
+  <nav class="hesed-home-bottom-nav" aria-label="Navigation rapide">
+    <a href="index.html" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+      <span>Accueil</span>
+    </a>
+    <a href="choisir.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h6l2 2h7v11h-15z"/></svg>
+      <span>Bibliothèque</span>
+    </a>
+    <a href="revisions.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M8 3.5v4M16 3.5v4M4 10h16"/></svg>
+      <span>Révisions</span>
+    </a>
+    <a href="mes-audios.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></svg>
+      <span>Audios</span>
+    </a>
+  </nav>
+  <footer class="site-footer">
+    <div class="wrap home-footer-inner">
+      <div class="home-footer-brand">
+        <strong>Hesed Mémoire</strong>
+        <p>Un espace pour organiser, réviser et consolider vos apprentissages.</p>
+      </div>
+      <div class="home-footer-links" aria-label="Liens utiles">
+        <a href="choisir.html">Bibliothèque</a>
+        <a href="revisions.html">Révisions</a>
+        <a href="mes-audios.html">Audios</a>
+        <a href="groupes.html">Groupes</a>
+        <a href="cartes-publiques.html">Bibliothèque publique</a>
+      </div>
+      <small class="home-footer-copy">© 2026 Hesed Mémoire</small>
+    </div>
+  </footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="auth.js?v=20261023-canonical-lock-v2"></script>
