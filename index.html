@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="css/hesed-memory-home-refine.css?v=20261107-memory-home-refine-v1">
   <link rel="stylesheet" href="css/hesed-home-thick-blocks.css?v=20261122-thick-blocks-v1">
   <link rel="stylesheet" href="css/hesed-home-hero-center.css?v=20261122-hero-center-v1">
+  <link rel="stylesheet" href="css/hesed-memory-experience.css?v=20261123-dashboard-v1">
 </head>
 <body data-page="home">
   <div class="ambient-bg" aria-hidden="true"></div>
@@ -130,43 +131,54 @@
       <form class="hesed-memory-search" id="hesedMemorySearch" role="search"><input id="hesedMemorySearchInput" type="search" autocomplete="off" placeholder="Rechercher une mémorisation, une carte ou un cours…" aria-label="Rechercher dans Hesed Mémoire"><button type="submit">Rechercher</button></form><p class="hesed-memory-search-status" id="hesedMemorySearchStatus" aria-live="polite"></p>
     </div>
   </section>
-  <section class="home-section" aria-labelledby="home-tools-title">
-    <div class="section-heading"><div><p class="section-kicker">ESPACE PERSONNEL</p><h2 id="home-tools-title">Quel espace souhaitez-vous consulter&nbsp;?</h2></div></div>
-    <div class="home-cards">
-      <a class="home-card" href="choisir.html">
-        <span class="card-symbol symbol-notes" aria-hidden="true">▤</span>
-        <span class="home-card-copy"><strong>Ma bibliothèque</strong><small>Textes à mémoriser et séries de cartes.</small><span class="card-stat"><b id="homeMemoryCount">0 mémoire</b> · <b id="homeCardCount">0 carte</b></span></span>
+  <section class="home-section home-dashboard-section" id="home-dashboard" aria-labelledby="home-dashboard-title">
+    <div class="section-heading home-section-heading">
+      <div>
+        <h2 id="home-dashboard-title">Vos espaces</h2>
+      </div>
+    </div>
 
+    <div class="home-cards" aria-label="Espaces Hesed Mémoire">
+      <a class="home-card home-card-library" href="choisir.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4.5 5.5h6l2 2h7v11h-15z"/><path d="M4.5 8h15"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Ma bibliothèque</strong>
+          <span class="card-stat"><b id="homeMemoryCount">0 mémoire</b><span aria-hidden="true">·</span><b id="homeCardCount">0 carte</b></span>
+        </span>
       </a>
-      <a class="home-card" href="revisions.html">
-        <span class="card-symbol symbol-review" aria-hidden="true">↻</span>
-        <span class="home-card-copy"><strong>Révisions du jour</strong><small>Vos cartes à revoir aujourd’hui.</small><span class="card-stat"><b id="homeDueCount">0 carte à réviser aujourd’hui</b></span></span>
 
+      <a class="home-card home-card-audio" href="mes-audios.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Mes audios</strong>
+        </span>
       </a>
-      <a class="home-card" href="assistant.html">
-        <span class="card-symbol symbol-review" aria-hidden="true">A</span>
-        <span class="home-card-copy"><strong>Assistante Hesed</strong><small>Cours, cartes, QCM et audio avec l’assistante pédagogique.</small></span>
 
+      <a class="home-card home-card-assistant" href="assistant.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3.5 14 9l5.5 2-5.5 2-2 5.5-2-5.5-5.5-2 5.5-2z"/><path d="m19 3 .7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Assistante Hesed</strong>
+        </span>
+      </a>
+
+      <a class="home-card home-card-groups" href="groupes.html">
+        <span class="card-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1a5.5 5.5 0 0 1 11 0v1z"/><path d="M16 5.5a3 3 0 0 1 0 5.8M17 14a4.5 4.5 0 0 1 3.5 4.4V19h-4"/></svg>
+        </span>
+        <span class="home-card-copy">
+          <strong>Mes groupes</strong>
+        </span>
       </a>
     </div>
-  </section>
-  <a class="create-banner" href="creer.html">
-    <span class="create-plus" aria-hidden="true">＋</span>
-    <span class="create-copy"><strong>Ajouter un contenu</strong><small>Texte, cartes ou questions-réponses.</small></span>
 
-  </a>
-  <section class="home-section" aria-labelledby="home-discover-title">
-    <div class="section-heading"><div><p class="section-kicker">AUTRES POSSIBILITÉS</p><h2 id="home-discover-title">Allez plus loin</h2></div></div>
-    <div class="home-action-grid">
-      <a class="home-action-card" href="groupes.html"><span class="action-icon" aria-hidden="true">♧</span><strong>Rejoindre ou créer un groupe</strong><small>Travaillez ensemble dans un espace dédié.</small></a>
-      <a class="home-action-card" href="cartes-publiques.html"><span class="action-icon" aria-hidden="true">⌕</span><strong>Explorer les cartes et mémorisations</strong><small>Parcourez et ajoutez des contenus partagés.</small></a>
-      <div class="home-action-card is-coming"><span class="action-icon" aria-hidden="true">≡</span><strong>Faire mon résumé</strong><small>Préparez un résumé clair à partir de vos notes.</small><span class="coming-label">Bientôt disponible</span></div>
-      <div class="home-action-card is-coming"><span class="action-icon action-document-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3.5h8l4 4V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z"/><path d="M14 3.5V8h4M8 12h8M8 16h8"/></svg></span><strong>Produire ma dissertation</strong><small>Organisez une problématique, un plan et vos arguments.</small><span class="coming-label">Bientôt disponible</span></div>
-    </div>
   </section>
-
   </main>
-  <footer class="site-footer"><div class="wrap footer-inner"><strong>Hesed Mémoire</strong><small>Apprendre à son rythme, sans frais pour les fonctions essentielles.</small></div></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="auth.js?v=20261023-canonical-lock-v2"></script>
