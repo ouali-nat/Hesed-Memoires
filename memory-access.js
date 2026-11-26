@@ -2,7 +2,7 @@
   "use strict";
   var gate=document.getElementById("memoryAccessLock");
   if(!gate) return;
-  var button=document.getElementById("memoryAccessAuroreId");
+  var button=document.getElementById("memoryAccessGoogle");
   var visitor=document.getElementById("memoryAccessVisitor");
   var message=document.getElementById("memoryAccessMessage");
   var menuToggle=document.getElementById("appMenuToggle");
@@ -51,8 +51,8 @@
         }
         await auth.signIn("index.html");
       }catch(error){
-        showMessage("Impossible de démarrer la connexion Aurore ID : "+(error && error.message ? error.message : "erreur inconnue"));
-        if(label) label.textContent="Continuer avec Aurore ID";
+        showMessage("Impossible de démarrer la connexion Google : "+(error && error.message ? error.message : "erreur inconnue"));
+        if(label) label.textContent="Continuer avec Google";
         button.disabled=false;
         busy=false;
       }
