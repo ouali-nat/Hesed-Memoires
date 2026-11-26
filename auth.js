@@ -239,7 +239,7 @@
         });
         if (result.error) throw result.error;
         if (!result.data || !result.data.url) {
-          throw new Error("Google n’a pas renvoyé d’adresse de connexion. Vérifiez le fournisseur custom:aurore-id dans Supabase Mémoire.");
+          throw new Error("Google n’a pas renvoyé d’adresse de connexion. Vérifiez que le fournisseur Google est activé dans Supabase Mémoire.");
         }
         return result.data;
       },
