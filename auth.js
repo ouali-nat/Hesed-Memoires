@@ -9,7 +9,7 @@
   var SUPABASE_URL = "https://oegxxndiuovisustjstp.supabase.co";
   var SUPABASE_PUBLISHABLE_KEY = "sb_publishable_YOvZs7MeadvbCCK93sp7jQ_NcBDcmGI";
   var WORKER_URL = "https://aurore-memories.oualikevin6.workers.dev";
-  var OIDC_PROVIDER = "custom:aurore-id";
+  var AUTH_PROVIDER = "google";
   var client = null;
 
   function loadScript(src) {
@@ -60,7 +60,7 @@
     // Android : revenir dans l'application installée, pas sur le site public.
     if (isNativeApp()) return "app.aurore.memoire://auth/callback";
     // Always return OAuth to the canonical production origin, not a deployment alias.
-    return new URL(path || "index.html", "https://aurore-memories-mu.vercel.app").toString();
+    return new URL(path || "index.html", "https://hesed-memoires.vercel.app").toString();
   }
 
   function installNativeAuthCallback() {
@@ -83,12 +83,12 @@
         var providerError = callback.searchParams.get("error_description") ||
           callback.searchParams.get("error");
         if (providerError) {
-          toast("La connexion Aurore ID a échoué : " + providerError);
+          toast("La connexion Google a échoué : " + providerError);
           return;
         }
         var code = callback.searchParams.get("code");
         if (!code) {
-          toast("Aurore ID est revenu dans l’application sans code de connexion.");
+          toast("Google est revenu dans l’application sans code de connexion.");
           return;
         }
         try {
@@ -98,11 +98,11 @@
           // Efface tout paramètre d'authentification de l'adresse affichée dans la WebView.
           try { history.replaceState(history.state, document.title, window.location.pathname + window.location.search); } catch (_) {}
         } catch (error) {
-          toast(error && error.message ? error.message : "Impossible de terminer la connexion Aurore ID dans l’application.");
+          toast(error && error.message ? error.message : "Impossible de terminer la connexion Google dans l’application.");
         }
       });
     }).catch(function (error) {
-      console.error("Aurore Mémoire : gestion du retour Aurore ID indisponible.", error);
+      console.error("Aurore Mémoire : gestion du retour Google indisponible.", error);
     });
   }
 
@@ -116,7 +116,7 @@
   async function api(path, options) {
     var session = await currentSession();
     if (!session || !session.access_token) {
-      var authError = new Error("Connectez-vous avec Aurore ID pour accéder à vos fichiers privés.");
+      var authError = new Error("Connectez-vous avec Google pour accéder à vos fichiers privés.");
       authError.status = 401;
       throw authError;
     }
@@ -159,7 +159,7 @@
     box.id = "auroreAuthControls";
     box.className = "aurore-auth-controls";
     box.innerHTML =
-      '<button class="aurore-auth-button" id="auroreAuthButton" type="button">Connexion Aurore ID</button>';
+      '<button class="aurore-auth-button" id="auroreAuthButton" type="button">Connexion Google</button>';
     header.insertBefore(box, header.firstChild || null);
 
     var button = document.getElementById("auroreAuthButton");
@@ -182,7 +182,7 @@
       try {
         var redirectTo = authRedirectUrl("fichiers.html");
         var result = await client.auth.signInWithOAuth({
-          provider: OIDC_PROVIDER,
+          provider: AUTH_PROVIDER,
           options: {
             redirectTo: redirectTo,
             scopes: "openid email profile"
@@ -190,11 +190,11 @@
         });
         if (result.error) throw result.error;
         if (!result.data || !result.data.url) {
-          throw new Error("Aurore ID n’a pas pu démarrer la connexion. Réessayez dans quelques instants.");
+          throw new Error("Google n’a pas pu démarrer la connexion. Réessayez dans quelques instants.");
         }
       } catch (error) {
         button.disabled = false;
-        button.textContent = "Connexion Aurore ID";
+        button.textContent = "Connexion Google";
         toast("Connexion impossible. Vérifiez votre connexion et réessayez.");
       }
     });
@@ -210,7 +210,7 @@
       button.hidden = true;
       button.disabled = false;
     } else {
-      button.textContent = "Connexion Aurore ID";
+      button.textContent = "Connexion Google";
       button.dataset.action = "signin";
       button.hidden = true;
       button.disabled = false;
@@ -231,12 +231,12 @@
     var authApi = {
       client: client,
       workerUrl: WORKER_URL,
-      provider: OIDC_PROVIDER,
+      provider: AUTH_PROVIDER,
       getSession: currentSession,
       api: api,
       signIn: async function (redirectPath) {
         var result = await client.auth.signInWithOAuth({
-          provider: OIDC_PROVIDER,
+          provider: AUTH_PROVIDER,
           options: {
             redirectTo: authRedirectUrl(redirectPath || "fichiers.html"),
             scopes: "openid email profile"
@@ -244,7 +244,7 @@
         });
         if (result.error) throw result.error;
         if (!result.data || !result.data.url) {
-          throw new Error("Aurore ID n’a pas renvoyé d’adresse de connexion. Vérifiez le fournisseur custom:aurore-id dans Supabase Mémoire.");
+          throw new Error("Google n’a pas renvoyé d’adresse de connexion. Vérifiez que le fournisseur Google est activé dans Supabase Mémoire.");
         }
         return result.data;
       },
