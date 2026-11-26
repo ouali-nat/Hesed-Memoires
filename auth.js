@@ -55,7 +55,7 @@
     // Android : revenir dans l'application installée, pas sur le site public.
     if (isNativeApp()) return "app.aurore.memoire://auth/callback";
     // Always return OAuth to the canonical production origin, not a deployment alias.
-    return new URL(path || "index.html", "https://aurore-memories-mu.vercel.app").toString();
+    return new URL(path || "index.html", "https://hesed-memoires.vercel.app").toString();
   }
 
   function installNativeAuthCallback() {
