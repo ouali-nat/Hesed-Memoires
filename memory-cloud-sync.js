@@ -71,6 +71,9 @@
   }
 
   function mountPanel() {
+    // L’accueil reste épuré ; le panneau reste disponible dans les pages internes
+    // pour afficher l’état du cloud et résoudre un éventuel conflit de sauvegarde.
+    if (document.body && document.body.dataset.page === "home") return;
     if (document.getElementById("auroreMemoryCloudPanel")) return;
     var header = document.querySelector(".topbar");
     if (!header) return;

@@ -246,16 +246,6 @@
     }
   }
 
-  if (themeToggle && themeToggle.parentElement && !document.querySelector(".theme-mode-choices")) {
-    var themeChoices = document.createElement("div");
-    themeChoices.className = "theme-mode-choices";
-    themeChoices.setAttribute("role", "group");
-    themeChoices.setAttribute("aria-label", "Choisir le thème d’affichage");
-    themeChoices.innerHTML = '<button type="button" data-theme-choice="light" aria-pressed="false">Clair</button><button type="button" data-theme-choice="dark" aria-pressed="false">Sombre</button><button type="button" data-theme-choice="system" aria-pressed="false">Auto</button>';
-    themeToggle.parentElement.insertBefore(themeChoices, themeToggle);
-    themeToggle.hidden = true;
-    themeChoices.addEventListener("click", function (event) { var choice = event.target.closest("[data-theme-choice]"); if (choice) setTheme(choice.dataset.themeChoice, true); });
-  }
 
   document.querySelectorAll(".top-actions a[href=\"mes-memoires.html\"]").forEach(function (link) { link.href = "choisir.html"; link.textContent = "Bibliothèque"; });
 
@@ -395,7 +385,7 @@
       // Otherwise sync can start too early and miss the initial sync for a signed-in user.
       if (window.auroreAuthReady) await window.auroreAuthReady;
       if (!window.__auroreMemoryCloudSyncLoaded) {
-        await loadScript("memory-cloud-sync.js?v=20261021-private-copy-polish");
+        await loadScript("memory-cloud-sync.js?v=20261126-home-sync-panel-hide-v1");
       }
     } catch (error) {
       console.warn("Aurore Mémoire : la sauvegarde cloud n’est pas initialisée. Les données locales restent disponibles.", error);
