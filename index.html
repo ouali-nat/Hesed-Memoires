@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <script>
   (function () {
-    var canonicalHost = "aurore-memories-mu.vercel.app";
+    var canonicalHost = "hesed-memoires.vercel.app";
     var host = String(window.location.hostname || "").toLowerCase();
-    if (host !== canonicalHost &&
-        /^aurore-memories(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(host)) {
+    var isHesedAlias = /^(?:hesed-memoires|aurore-memories)(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(host);
+    if (host !== canonicalHost && isHesedAlias) {
       var target = new URL(window.location.href);
       target.hostname = canonicalHost;
       window.location.replace(target.toString());
@@ -60,9 +60,9 @@
               <p>Retrouvez vos mémorisations et vos cartes dans un espace pensé pour apprendre à votre rythme.</p>
             </div>
             <div class="memory-access-actions">
-              <button class="memory-access-provider-btn" id="memoryAccessAuroreId" type="button">
-                <span class="memory-access-provider-mark" aria-hidden="true">ID</span>
-                <span class="memory-access-provider-copy"><strong>Continuer avec Hesed ID</strong><small>Un accès unique pour les services Hesed</small></span>
+              <button class="memory-access-provider-btn" id="memoryAccessGoogle" type="button">
+                <span class="memory-access-provider-mark" aria-hidden="true">G</span>
+                <span class="memory-access-provider-copy"><strong>Continuer avec Google</strong><small>Connexion avec votre compte Google</small></span>
               </button>
             </div>
             <p class="memory-access-message" id="memoryAccessMessage" role="alert" aria-live="polite"></p>
@@ -72,7 +72,7 @@
             <div class="memory-access-alt-head">Autres possibilités</div>
             <div class="memory-access-alt-scroll">
               <button class="memory-access-visitor-btn" id="memoryAccessVisitor" type="button">
-                <strong>Continuer sans compte</strong><small>Accéder à Mémoire sur cet appareil. La synchronisation cloud nécessite Hesed ID.</small>
+                <strong>Continuer sans compte</strong><small>Accéder à Mémoire sur cet appareil. La synchronisation cloud nécessite une connexion Google.</small>
               </button>
             </div>
           </section>
