@@ -1,0 +1,14 @@
+/* Aurore Mémoire — nettoyage de l'interface : pas d'icônes-symboles ni d'emojis décoratifs. */
+.topbar .top-actions .nav-link::before,
+.topbar .top-actions .nav-link:nth-child(1)::before,
+.topbar .top-actions .nav-link:nth-child(2)::before,
+.topbar .top-actions .nav-link:nth-child(3)::before,
+.topbar .top-actions .nav-link.aurore-refresh-app::before {
+  content: none !important;
+  display: none !important;
+}
+.topbar .top-actions .nav-link {
+  min-height: 40px;
+  padding: 8px 10px;
+  justify-content: center;
+}
